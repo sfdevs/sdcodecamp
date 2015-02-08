@@ -1,0 +1,79 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+[class^="speaker-"],[class*=" speaker-"] {
+
+}
+
+.speaker-index {
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+        li {
+            display: block;
+            margin-bottom: 2em;
+            text-align: left;
+        }
+    }
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+.speaker {
+    img {
+        margin-right: 2em;
+    }
+}
+
+.speaker-show {
+    text-align: left;
+    .details {
+        @include flex();
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.bio {
+    h6 {
+        font-size: .9em;
+        text-shadow: none;
+    }
+}
+
+@media only screen and (min-width: 30em) {
+    .speaker-index {
+        ul {
+            @include flex();
+            text-align: left;
+            flex-wrap: wrap;
+            -webkit-flex-flow: wrap;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            @supports ( not (flex-wrap:wrap) ){
+                display: block;
+            }
+        }
+        li {
+            width: 40%;
+            @supports ( not (flex-wrap:wrap) ){
+                display: inline-block;
+                float: left;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    .speaker-show {
+        .gravitar,.social,.bio {
+            width: 48%;
+        }
+    }
+}
+
+@media only screen and (min-width: 64em) {
+
+}

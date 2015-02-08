@@ -60,35 +60,35 @@ class Speaker
     /**
      * @var string
      *
-     * @ORM\Column(name="bio", type="text")
+     * @ORM\Column(name="bio", type="text", nullable=true)
      */
     private $bio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="twitter", type="string", length=255)
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
     private $twitter;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="company", type="string", length=255)
+     * @ORM\Column(name="company", type="string", length=255, nullable=true)
      */
     private $company;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="company_url", type="string", length=255)
+     * @ORM\Column(name="company_url", type="string", length=255, nullable=true)
      */
     private $companyUrl;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="personal_site", type="string", length=255)
+     * @ORM\Column(name="personal_site", type="string", length=255, nullable=true)
      */
     private $personalSite;
 
@@ -375,5 +375,15 @@ class Speaker
     public function getSessions()
     {
         return $this->sessions;
+    }
+
+    public function getFullName()
+    {
+        return sprintf("%s %s", $this->firstName, $this->lastName);
+    }
+
+    public function getEmailMd5()
+    {
+        return md5(trim($this->email));
     }
 }

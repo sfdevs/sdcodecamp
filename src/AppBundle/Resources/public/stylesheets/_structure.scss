@@ -1,0 +1,34 @@
+body {
+    background: $bodyColor url('/bundles/app/images/hero_thin.jpg') no-repeat center top;
+    background-size: auto 74px;
+    &.home {
+        background: $bodyColor url('/bundles/app/images/hero.jpg') no-repeat center top;
+        background-attachment: fixed;
+        background-size: auto 300px;
+    }
+}
+
+@media only screen and (min-width: 30em) {
+    body {
+        &.home {
+            background-size: auto 400px;
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    body {
+        &.home {
+            background-size: auto 500px;
+        }
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    body {
+        &.home {
+            background-position: center -150px;
+            background-size: auto 700px;
+        }
+    }
+}

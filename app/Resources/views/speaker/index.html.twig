@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Speakers | {{ parent() }}{% endblock %}
+
+{% block body %}
+<section class="speaker-index interior-content clearfix" id="SpeakerIndex">
+    <h1 class="pagetitle cutout">Speakers</h1>
+    {% if speakers %}
+    <ul>
+        {% for speaker in speakers %}
+        <li class="speaker">
+            <a href="{{ path('speaker_show', {id: speaker.id}) }}">
+                <img class="img-circle" src="http://www.gravatar.com/avatar/{{ speaker.emailMd5 }}?s=150" />
+            </a>
+            <a href="{{ path('speaker_show', {id: speaker.id}) }}">{{ speaker.fullName }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>
+{% endblock %}

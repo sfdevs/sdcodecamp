@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ session.title }} | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="session-show interior-content clearfix">
+
+        <h1 class="pagetitle cutout">{{ session.title }}</h1>
+
+        {#<p class="attribution">Presented by: <%= link_to @session.speaker.fullname, speaker_slug_path(@session.speaker.slug,@session.speaker) %></p>#}
+
+        {#<% if @session.speaker_deck? %>#}
+        {#<p class="links">Links: <a id="SpeakerDeckUrl" href="<%= @session.speaker_deck %>">Slides</a></p>#}
+        {#<% if @session.iframe != '' %>#}
+        {#<div id="SpeakerDeckEmbed" class="embed"><%= @session.iframe.html_safe %></div>#}
+        {#<% end %>#}
+        {#<% end %>#}
+
+        <div class="abstract">{{ session.abstract|raw }}</div>
+
+    </section>
+{% endblock %}

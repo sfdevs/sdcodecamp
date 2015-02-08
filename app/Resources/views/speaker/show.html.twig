@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ speaker.fullName }} | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="speaker-show interior-content clearfix">
+
+        <h1 class="pagetitle cutout">{{ speaker.fullName }}</h1>
+
+        <div class="details">
+            <div class="bio">
+                <h6>Bio:</h6>
+                {% if speaker.bio %}
+                    {{ speaker.bio }}
+                {% else %}
+                <p>Bio coming soon...
+                {% endif %}
+            </div>
+            <div class="social">
+                {% if speaker.twitter %}
+                <p>Twitter: <a href="http://twitter.com/{{ speaker.twitter }}">{{ speaker.twitter }}</a>
+                {% endif %}
+                {% if speaker.company %}
+                <p>Company: {% if speaker.company_url %}<a href="{{ speaker.company_url }}" target="_blank">{% endif %}{{ speaker.company }}{% if speaker.company_url %}></a>{% endif %}
+                {% endif %}
+                {% if speaker.personalSite %}
+                <p><a href="{{ speaker.personalSite }}" target="_blank">Personal Website</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

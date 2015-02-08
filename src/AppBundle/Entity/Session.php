@@ -31,14 +31,14 @@ class Session
     /**
      * @var string
      *
-     * @ORM\Column(name="abstract_markdown", type="text")
+     * @ORM\Column(name="abstract_markdown", type="text", nullable=true)
      */
     private $abstractMarkdown;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="abstract", type="text")
+     * @ORM\Column(name="abstract", type="text", nullable=true)
      */
     private $abstract;
 

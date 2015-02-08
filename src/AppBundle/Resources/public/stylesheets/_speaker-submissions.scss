@@ -1,0 +1,27 @@
+// Place all the styles related to the SpeakerSubmissions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.inline-errors {
+    background: pink;
+    padding: 1em;
+}
+
+.speaker-submission {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+        clear: left;
+    }
+    ol {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    label, button {
+        float: left;
+    }
+    .speaker_submission {
+        margin: 2em 0;
+    }
+}

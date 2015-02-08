@@ -1,0 +1,77 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+[class^="session-"],[class*=" session-"] {
+    .attribution,.links {
+        font-size: .9em;
+        padding-bottom: .1em;
+    }
+}
+
+.session-index {
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+        li {
+            display: block;
+            padding-left: 0;
+            text-align: left;
+        }
+    }
+}
+.session {
+    h3 {
+        text-shadow: none;
+    }
+}
+.session-show {
+    text-align: left;
+}
+
+.embed {
+    display: none;
+    > div {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 30em) {
+
+}
+
+@media only screen and (min-width: 48em) {
+    .session-index {
+        ul {
+            @include flex();
+            text-align: left;
+            flex-wrap: wrap;
+            -webkit-flex-flow: wrap;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            @supports ( not (flex-wrap:wrap) ){
+                display: block;
+            }
+        }
+        li {
+            width: 48%;
+            @supports ( not (flex-wrap:wrap) ){
+                display: inline-block;
+                float: left;
+            }
+        }
+    }
+    .embed {
+        display: block;
+        float: right;
+        margin: 0 0 1em 1em;
+        > iframe {
+            width: 32em;
+            @include css3-calc('height', '32em * .89')
+        }
+    }
+}
+
+@media only screen and (min-width: 64em) {
+
+}

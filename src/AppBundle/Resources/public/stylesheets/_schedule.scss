@@ -1,0 +1,30 @@
+// Place all the styles related to the Schedule controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+[class^="schedule-"],[class*=" schedule-"] {
+
+}
+
+.schedule-index {
+    td {
+        padding: 1em .5em;
+    }
+    th {
+        -webkit-font-smoothing: antialiased;
+        border-bottom: 1px solid #555555;
+        color: #555555;
+        font-size: 1.375em;
+    }
+    h2 {
+        -webkit-font-smoothing: antialiased;
+        text-shadow: none;
+    }
+}
+.time-col {
+    min-width: 2em;
+    width: 8em;
+}
+.room-heading {
+    min-width: 100px;
+}

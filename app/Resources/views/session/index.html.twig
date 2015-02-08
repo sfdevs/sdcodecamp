@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sessions | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="session-index interior-content clearfix" id="SessionIndex">
+        <h1 class="pagetitle cutout">Sessions</h1>
+
+        {% if sessions %}
+        <ul>
+            {% for session in sessions %}
+            <li class="session">
+                <article>
+                    <h3><a href="{{ path('session_show', {id: session.id}) }}">{{ session.title }}</a></h3>
+                    <p class="attribution">Presented by: <a href="{{ path('speaker_show', {id: session.speaker.id}) }}">{{ session.speaker.fullName }}</a></p>
+                    {#<% if session.speaker_deck? %>#}
+                    {#<p class="links">Links: <a id="SpeakerDeckUrl" href="<%= session.speaker_deck %>">Slides</a></p>#}
+                    {#<% end %>#}
+                    <p class="summary">{{ session.abstract }}</p>
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p><a href="/submit">Call for Speakers</a></p>
+        {% endif %}
+
+    </section>
+{% endblock %}

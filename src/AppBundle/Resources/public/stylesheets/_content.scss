@@ -1,0 +1,288 @@
+.pagetitle {
+    font-size: 4em;
+    margin-bottom: 1em;
+    padding: .25em 0 .125em 0;
+}
+.hero {
+    padding: 2em 0;
+    color: white;
+    text-align: center;
+    a {
+        color: white;
+    }
+}
+
+.line1 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+    text-shadow: 0px 0px 1px rgba(150, 150, 150, 1);
+}
+
+.line2 {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+.line3 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.25em;
+    a {
+        color: white;
+        font-style: italic;
+    }
+    .button {
+        @include horizontal($sdccLightGreen,$sdccBlue);
+        font-size: .5em;
+        text-decoration: none;
+    }
+}
+
+.main-content {
+    background: white;
+    padding: 2em 1em 0 1em;
+    text-align: center;
+}
+
+.interior-content {
+    background: white;
+    padding: 0 1em 0 1em;
+    text-align: center;
+    margin-top: 4em;
+}
+.email-signup {
+    background: white;
+    padding: 0 1em;
+    padding-bottom: 1em;
+    text-align: center;
+
+    button {
+        font-size: 1.5em;
+    }
+
+    .field {
+        text-align: left;
+    }
+}
+
+.cutout {
+    text-shadow: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #68dcc0 30%,#8c93de 57%,#f9a57f 79%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    line-height: 1em;
+}
+
+h2.cutout {
+    padding: .25em 0 .125em 0;
+    font-size: 4em;
+}
+
+h4.cutout {
+    letter-spacing: .05em;
+    margin-bottom: 1em;
+}
+
+.updates {
+    background: $sdccLighterGrey;
+    padding: 1em;
+}
+
+.tweet {
+    margin-bottom: 1em;
+
+    img {
+        border-radius: 10%;
+        float: left;
+        width: 45px;
+        margin: 0 5px 5px 0;
+    }
+
+    &>a {
+        display: block;
+        text-transform: uppercase;
+
+        &:first-of-type {
+            color: $sdccLightGreen;
+            margin-bottom: .25em;
+            padding-top: .125em;
+        }
+
+        &:nth-of-type(2) {
+            font-size: .75em;
+            color: $sdccGrey;
+        }
+    }
+}
+
+.tweet-content {
+    clear: both;
+    word-break: break-word;
+
+    a {
+        color: $sdccLightGreen;
+    }
+}
+.twitter-follow-button {
+    float: right;
+    margin: 1em 0 1em 1em;
+}
+
+.sponsor-index {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 2em;
+    }
+    img {
+        max-width: 10em;
+    }
+}
+
+@media only screen and (min-width: 30em) {
+    .hero {
+        padding: 3em 0;
+    }
+
+    .line1 {
+        font-size: 2.5em;
+    }
+
+    .line2 {
+        font-size: 2.5em;
+    }
+
+    .line3 {
+        font-size: 4.25em;
+        .button {
+            font-size: .4em;
+        }
+    }
+
+    .main-content {
+        padding-top: 4em;
+    }
+
+    h4.cutout {
+        margin-bottom: 2em;
+    }
+
+    .email-signup {
+        @include clearfix();
+
+        .field {
+            float: left;
+            @include css3-calc('width', '50% - .5em');
+            margin-right: 1em;
+
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .updates {
+        @include clearfix();
+    }
+
+    .tweet {
+        float: left;
+        @include css3-calc('width', '50% - .5em');
+        margin-right: 1em;
+
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+    }
+
+    h4.cutout {
+        letter-spacing: .2em;
+    }
+
+    .sponsor-index {
+        img {
+            max-width: 20em;
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    .hero {
+        padding: 5em 0;
+    }
+
+    .line1 {
+        font-size: 4.5em;
+    }
+
+    .line2 {
+        font-size: 4.5em;
+    }
+
+    .line3 {
+        font-size: 6.25em;
+        .button {
+            font-size: .3em;
+        }
+    }
+
+    .main-content, .interior-content {
+        p {
+            font-size: 1.25em;
+        }
+    }
+
+    .email-signup {
+        .field {
+            @include css3-calc('width', '50% - (10em / 2)');
+            margin-right: 2em;
+
+            &:nth-child(2) {
+                margin-right: 2em;
+            }
+
+            &:last-of-type {
+                width: 5.8125em;
+                margin-right: 0;
+                padding-top: 1.375em;
+            }
+        }
+    }
+
+    .sponsor-index {
+        img {
+            max-width: 25em;
+        }
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    .main-content,
+    .email-signup {
+        @include css3-calc('padding-left', '50% - 22.5em');
+        @include css3-calc('padding-right', '50% - 22.5em');
+    }
+    .interior-content {
+        @include css3-calc('padding-left', '50% - 30em');
+        @include css3-calc('padding-right', '50% - 30em');
+    }
+
+    .updates {
+        @include css3-calc('padding-left', '50% - 27em');
+        @include css3-calc('padding-right', '50% - 27em');
+    }
+
+    .sponsor-index {
+        img {
+            max-width: 30em;
+        }
+    }
+}

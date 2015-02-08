@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+footer.main {
+    padding: 1em;
+    background: white;
+    .g-plus-link {
+        float: right;
+        padding: 1em 0;
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    footer.main {
+        @include css3-calc('padding-left', '50% - 30em');
+        @include css3-calc('padding-right', '50% - 30em');
+    }
+}

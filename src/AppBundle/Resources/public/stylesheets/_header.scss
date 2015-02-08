@@ -1,0 +1,43 @@
+header.main {
+    @include clearfix();
+    text-align: center;
+    background-color: white;
+}
+
+.title {
+    color: $textColor;
+    position: relative;
+    display: inline-block;
+    margin: .5em 0;
+    padding-left: 50px;
+    background: url('/bundles/app/images/logo.png') no-repeat left 50%;
+    line-height: 32px;
+    font-size: .875em;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-shadow: none;
+    z-index: 3;
+    @include transition(color .2s);
+}
+
+.menu-open {
+    header.main {
+        .title {
+            color: white;
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    header.main {
+        text-align: left;
+        padding-left: 1em;
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    header.main {
+        @include css3-calc('padding-left', '50% - 30em');
+        @include css3-calc('padding-right', '50% - 30em');
+    }
+}
