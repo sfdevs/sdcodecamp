@@ -83,3 +83,8 @@ knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:
         template: knp_menu.html.twig
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
