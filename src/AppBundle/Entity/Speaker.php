@@ -386,4 +386,9 @@ class Speaker
     {
         return md5(trim($this->email));
     }
+
+    public function __toString()
+    {
+        return $this->getFullName();
+    }
 }

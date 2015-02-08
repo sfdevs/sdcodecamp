@@ -152,4 +152,10 @@ class Session
     {
         return $this->speaker;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
+
 }
