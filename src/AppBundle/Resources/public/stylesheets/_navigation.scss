@@ -41,6 +41,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        opacity: 0;
         width: 100%;
         background: $sdccBlue;
         overflow: hidden;
@@ -51,7 +52,9 @@
             color: white;
             font-weight: bold;
             padding: 1em 0;
-
+        }
+        span {
+            display: block;
             &:first-child {
                 margin-top: 2.5em;
             }
@@ -88,7 +91,8 @@
         span {
             margin: 0 .1em;
         }
-        span:hover, .active {
+        span:hover,
+        .active {
             border-bottom: 2px solid #00e4b1;
         }
     }

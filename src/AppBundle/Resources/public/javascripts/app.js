@@ -10,6 +10,7 @@ var sdcc = {
     mainMenu: null,
     menuInit: function() {
         this.mainMenu = document.getElementById('main_nav');
+        this.mainMenu.style.opacity = 1;
         this.closeMenu();
     },
     closeMenu: function() {

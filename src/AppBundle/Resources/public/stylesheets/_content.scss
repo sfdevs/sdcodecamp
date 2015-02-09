@@ -51,6 +51,17 @@
     text-align: center;
     margin-top: 4em;
 }
+
+.page-content {
+    background: white;
+    padding: 0 1em 0 1em;
+    margin-top: 4em;
+    ul,
+    ol {
+        margin-bottom: 1em;
+    }
+}
+
 .email-signup {
     background: white;
     padding: 0 1em;
@@ -234,8 +245,17 @@ h4.cutout {
         }
     }
 
-    .main-content, .interior-content {
+    .main-content,
+    .interior-content,
+    .page-content{
         p {
+            font-size: 1.25em;
+        }
+    }
+
+    .page-content {
+        ul,
+        ol {
             font-size: 1.25em;
         }
     }
@@ -270,7 +290,8 @@ h4.cutout {
         @include css3-calc('padding-left', '50% - 22.5em');
         @include css3-calc('padding-right', '50% - 22.5em');
     }
-    .interior-content {
+    .interior-content,
+    .page-content{
         @include css3-calc('padding-left', '50% - 30em');
         @include css3-calc('padding-right', '50% - 30em');
     }

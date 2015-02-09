@@ -76,6 +76,7 @@ swiftmailer:
 
 easy_admin:
     site_name: 'South Dakota Code Camp'
+    list_actions: ['show', 'edit']
     entities:
         Speaker:
             class: AppBundle\Entity\Speaker
@@ -85,6 +86,10 @@ easy_admin:
             class: AppBundle\Entity\Session
             list:
                 fields: ['id', 'title', 'speaker']
+        SpeakerSubmission:
+            class: AppBundle\Entity\SpeakerSubmission
+            list:
+                fields: ['id', 'title', 'name', 'email']
 
 knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer

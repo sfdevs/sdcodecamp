@@ -14,4 +14,12 @@ class DefaultController extends Controller
     {
         return $this->render('default/index.html.twig');
     }
+
+    /**
+     * @Route("/manifesto/", name="page_manifesto")
+     */
+    public function manifestoAction()
+    {
+        return $this->render('default/manifesto.html.twig');
+    }
 }

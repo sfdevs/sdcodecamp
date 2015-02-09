@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Call for Speakers | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="speaker-submission interior-content clearfix">
+        <h1 class="pagetitle cutout">Call for speakers</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+    </section>
+{% endblock %}
