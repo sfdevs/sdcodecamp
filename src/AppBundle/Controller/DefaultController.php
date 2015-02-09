@@ -2,17 +2,21 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Subscriber;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class DefaultController extends SubscriberTypeController
 {
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction()
     {
-        return $this->render('default/index.html.twig');
+        $subscriber = new Subscriber();
+        $form = $this->createCreateForm($subscriber);
+        return $this->render('default/index.html.twig', array(
+                'subscribe_form' => $form->createView(),
+            ));
     }
 
     /**

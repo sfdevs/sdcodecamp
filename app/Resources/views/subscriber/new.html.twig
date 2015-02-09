@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Subscribe to Updates | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="speaker-submission interior-content clearfix">
+        <h1 class="pagetitle cutout">Subscribe for updates</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+    </section>
+{% endblock %}

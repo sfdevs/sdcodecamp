@@ -85,5 +85,4 @@ class SpeakerSubmissionController extends Controller
         $form->add('submit', 'submit', array('label' => 'Submit'));
         return $form;
     }
-
 }
