@@ -15,7 +15,7 @@
         <meta name="description" content="{% block meta_description %}South Dakota Code Camp April 18, 2015 - Sioux Falls, SD. This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net User Group.{% endblock %}">
         {% block stylesheets %}
             <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
-            {% stylesheets '@AppBundle/Resources/public/stylesheets/app.scss' filter='cssrewrite, sass' %}
+            {% stylesheets '@AppBundle/Resources/public/stylesheets/app.scss' filter='cssrewrite, scssphp' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
