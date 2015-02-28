@@ -11,5 +11,7 @@
 /bin/
 /composer.phar
 
-/web/js/
-/web/css/
+/web/js/*
+!web/js/.gitkeep
+/web/css/*
+!web/css/.gitkeep
