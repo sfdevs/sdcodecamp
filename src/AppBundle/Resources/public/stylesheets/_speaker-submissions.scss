@@ -7,27 +7,10 @@
 }
 
 .speaker-submission {
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        max-width: 100%;
-        clear: left;
-    }
     ol {
         margin-left: 0;
         padding-left: 0;
         list-style: none;
-    }
-    form {
-        text-align: left;
-    }
-    label,
-    button {
-        display: inline-block;
-        max-width: 100%;
-        margin-bottom: .5em;
-        font-weight: 700;
-        text-align: left;
     }
     .speaker_submission {
         margin: 2em 0;

@@ -35,7 +35,9 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:
+        - 'FOSUserBundle'
+        - 'TwigBundle'
     #java: /usr/bin/java
     # ruby: ~
     filters:

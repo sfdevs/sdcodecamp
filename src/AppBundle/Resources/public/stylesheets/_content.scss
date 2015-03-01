@@ -45,11 +45,31 @@
     text-align: center;
 }
 
+.error-content,
 .interior-content {
     background: white;
     padding: 0 1em 0 1em;
     text-align: center;
     margin-top: 4em;
+
+    form {
+        text-align: left;
+    }
+    label,
+    button {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: .5em;
+        font-weight: 700;
+        text-align: left;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        max-width: 100%;
+        clear: left;
+    }
 }
 
 .page-content {
@@ -246,6 +266,7 @@ h4.cutout {
     }
 
     .main-content,
+    .error-content,
     .interior-content,
     .page-content{
         p {
@@ -290,6 +311,7 @@ h4.cutout {
         @include css3-calc('padding-left', '50% - 22.5em');
         @include css3-calc('padding-right', '50% - 22.5em');
     }
+    .error-content,
     .interior-content,
     .page-content{
         @include css3-calc('padding-left', '50% - 30em');

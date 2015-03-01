@@ -29,7 +29,11 @@
 
         {% include 'includes/flash_bag.html.twig' %}
 
-        {% block body %}{% endblock %}
+        {% block body %}
+        <section class="interior-content clearfix">
+            {% block fos_user_content %}{% endblock %}
+        </section>
+        {% endblock %}
 
         {% include 'includes/footer.html.twig' %}
 
