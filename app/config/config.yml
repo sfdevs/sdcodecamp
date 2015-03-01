@@ -78,18 +78,30 @@ easy_admin:
     site_name: 'South Dakota Code Camp'
     list_actions: ['show', 'edit']
     entities:
-        Speaker:
+        Speakers:
             class: AppBundle\Entity\Speaker
             list:
                 fields: ['id', 'fullName', 'visible']
-        Session:
+            edit:
+                fields: ['firstName', 'lastName', 'email', 'visible', 'slug', 'bio', 'twitter', 'company', 'companyUrl', 'personalSite', 'sessions']
+            new:
+                fields: ['firstName', 'lastName', 'email', 'visible', 'slug', 'bio', 'twitter', 'company', 'companyUrl', 'personalSite', 'sessions']
+        Sessions:
             class: AppBundle\Entity\Session
             list:
                 fields: ['id', 'title', 'speaker']
-        SpeakerSubmission:
+            edit:
+                fields: ['title', 'speaker', 'abstract']
+            new:
+                fields: ['title', 'speaker', 'abstract']
+        'Speaker Submissions':
             class: AppBundle\Entity\SpeakerSubmission
             list:
-                fields: ['id', 'title', 'name', 'email']
+                fields: ['id', 'title', 'speaker']
+            edit:
+                fields: ['name', 'email', 'title', 'abstract', 'bio']
+            new:
+                fields: ['name', 'email', 'title', 'abstract', 'bio']
 
 knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer
