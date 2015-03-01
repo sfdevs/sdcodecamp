@@ -9,9 +9,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\SessionRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Session
 {
+    use TimeStampedEntity;
+
     /**
      * @var integer
      *

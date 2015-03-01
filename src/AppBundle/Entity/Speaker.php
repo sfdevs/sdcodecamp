@@ -10,9 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Repository\SpeakerRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Speaker
 {
+    use TimeStampedEntity;
+
     /**
      * @var integer
      *
