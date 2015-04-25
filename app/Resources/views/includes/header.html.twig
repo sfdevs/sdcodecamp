@@ -1,5 +1,13 @@
+{% set currentPath = path(app.request.attributes.get('_route'),
+    app.request.attributes.get('_route_params')) %}
 <header class="main">
-    <a href="{{ path('homepage') }}"><h2 class="title">South Dakota Code Camp</h2></a>
+    <a href="{{ path('homepage') }}">
+        {% if currentPath == '/' %}
+        <h1 class="title">South Dakota Code Camp</h1>
+        {% else %}
+        <h2 class="title">South Dakota Code Camp</h2>
+        {% endif %}
+    </a>
     <a class="open-close-menu-switch" onclick="sdcc.toggleMenu();"></a>
     {# navigation goes here #}
     {{ knp_menu_render('main', {'currentClass': 'active'}) }}

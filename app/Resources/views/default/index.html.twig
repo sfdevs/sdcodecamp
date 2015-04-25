@@ -18,28 +18,12 @@
             <h4 class="cutout">
                 Sioux Falls, SD
             </h4>
-            <p>This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net User Group with the sponsorship and support from many area businesses. Most of you visiting may be wonder "Whats a code camp?" <a href="{{ path('page_manifesto') }}">Here is the basic idea</a>.</p>
-            <p>Sign up for notififactions and other cool stuff that you don’t want to miss.</p>
-        </section>
-        <section class="email-signup">
-            <section class="email-signup">
-                {{ form_start(subscribe_form) }}
-                <div class="field">
-                    {{ form_label(subscribe_form.name) }}
-                    {{ form_errors(subscribe_form.name) }}
-                    {{ form_widget(subscribe_form.name) }}
-                </div>
-                <div class="field">
-                    {{ form_label(subscribe_form.email) }}
-                    {{ form_errors(subscribe_form.email) }}
-                    {{ form_widget(subscribe_form.email) }}
-                </div>
-                <div class="field">
-                    {{ form_widget(subscribe_form.submit) }}
-                </div>
-
-                {{ form_end(subscribe_form) }}
-            </section>
+            <p>
+                This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net
+                User Group with the sponsorship and support from many area businesses. Most of you
+                visiting may be wonder "Whats a code camp?"
+                <a href="{{ path('page_information') }}">Here is the basic idea</a>.
+            </p>
         </section>
     </main>
     <section class="updates" role="complimentary">

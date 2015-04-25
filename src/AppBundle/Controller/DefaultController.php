@@ -14,16 +14,18 @@ class DefaultController extends SubscriberTypeController
     {
         $subscriber = new Subscriber();
         $form = $this->createCreateForm($subscriber);
-        return $this->render('default/index.html.twig', array(
+        return $this->render('default/index.html.twig',
+            array(
                 'subscribe_form' => $form->createView(),
-            ));
+            )
+        );
     }
 
     /**
-     * @Route("/manifesto/", name="page_manifesto")
+     * @Route("/information/", name="page_information")
      */
-    public function manifestoAction()
+    public function informationAction()
     {
-        return $this->render('default/manifesto.html.twig');
+        return $this->render('default/information.html.twig');
     }
 }
