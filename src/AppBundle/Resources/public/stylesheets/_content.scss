@@ -121,7 +121,16 @@ h4.cutout {
 
 .updates {
     background: $sdccLighterGrey;
+    margin: 0 auto;
     padding: 1em;
+    text-align: center;
+}
+
+
+.tweet-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
 }
 
 .tweet {
@@ -302,6 +311,10 @@ h4.cutout {
         img {
             max-width: 25em;
         }
+    }
+    .tweet-container {
+        display: inline-block;
+        max-width: 49%
     }
 }
 

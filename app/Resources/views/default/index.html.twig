@@ -4,13 +4,13 @@
     <main role="main">
         <section class="hero">
             <div class="line1">
-                We've got...
+                We need
             </div>
             <div class="line2">
-                ...Top Notch Speakers
+                 Speakers
             </div>
             <div class="line3">
-                <a href="{{ path('speaker_index') }}" class="button">See the Lineup</a>
+                <a href="{{ path('speaker_submission_new') }}" class="button">Submit your session</a>
             </div>
         </section>
         <section class="main-content">
@@ -27,22 +27,20 @@
         </section>
     </main>
     <section class="updates" role="complimentary">
-        <article class="tweet">
-            <img src="https://si0.twimg.com/profile_images/378800000509092758/5ac5436e8d8ca483cdd8ceb68486031e_bigger.png" alt="twitter.com/sdcodecamp" />
-            <a href="http://www.twitter.com/sdcodecamp" class="twitter-name">South Dakota Code Camp</a>
-            <a href="http://www.twitter.com/sdcodecamp" class="twitter-handle">@sdcodecamp</a>
-            <div class="tweet-content">
-                Schedule is up <a href="http://southdakotacodecamp.net/schedule">http://southdakotacodecamp.net/schedule</a>
-            </div>
-        </article>
-        <article class="tweet">
-            <img src="https://si0.twimg.com/profile_images/378800000509092758/5ac5436e8d8ca483cdd8ceb68486031e_bigger.png" alt="twitter.com/sdcodecamp" />
-            <a href="http://www.twitter.com/sdcodecamp" class="twitter-name">South Dakota Code Camp</a>
-            <a href="http://www.twitter.com/sdcodecamp" class="twitter-handle">@sdcodecamp</a>
-            <div class="tweet-content">
-                Next SD Code Camp is Nov 9th!  Speakers can email submissions to sdcodecamp at gmail
-            </div>
-        </article>
+        <div class="tweet-container">
+        <blockquote class="twitter-tweet"
+                    data-cards="hidden"
+                    data-width="50%">
+            <a href="https://twitter.com/sdcodecamp/status/398531523730628608"></a>
+        </blockquote>
+        </div>
+        <div class="tweet-container">
+        <blockquote class="twitter-tweet"
+                    data-cards="hidden"
+                    data-width="50%">
+            <a href="https://twitter.com/sdcodecamp/status/267053531666735104"></a>
+        </blockquote>
+        </div>
     </section>
 {% endblock %}
 
