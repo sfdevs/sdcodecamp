@@ -28,4 +28,12 @@ class DefaultController extends SubscriberTypeController
     {
         return $this->render('default/information.html.twig');
     }
+
+    /**
+     * @Route("/venue/", name="page_venue")
+     */
+    public function venueAction()
+    {
+        return $this->render('default/venue.html.twig');
+    }
 }

@@ -30,6 +30,7 @@ class MenuBuilder
         //        $menu->addChild('Home', array('route' => 'homepage'));
         $menu->addChild('Speakers', array('route'=> 'speaker_index'));
         $menu->addChild('Sessions', array('route'=> 'session_index'));
+        $menu->addChild('Venue', array('route'=> 'page_venue'));
 
         $RouteVoter = new RouteVoter();
         $RouteVoter->setRequest($currentRequest);
