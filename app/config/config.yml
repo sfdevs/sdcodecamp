@@ -90,7 +90,7 @@ easy_admin:
                 fields: ['title', 'speaker', 'abstract']
             new:
                 fields: ['title', 'speaker', 'abstract']
-        'Speaker Submissions':
+        SpeakerSubmissions:
             class: AppBundle\Entity\SpeakerSubmission
             list:
                 fields: ['id', 'title', 'speaker']

@@ -15,3 +15,6 @@
 !web/js/.gitkeep
 /web/css/*
 !web/css/.gitkeep
+
+# managed by composer
+app/SymfonyRequirements.php
