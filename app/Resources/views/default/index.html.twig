@@ -2,6 +2,29 @@
 {% block title %}{{ parent() }} &bull; {{ event_date }}{% endblock %}
 {% block meta_other %}
     <meta property="og:type" content="website" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "name": "South Dakota Code Camp",
+        "startDate" : "{{ event_date_iso }}",
+        "url" : "{{ url(app.request.attributes.get('_route')) }}",
+        "location" : {
+            "@type" : "Place",
+            "sameAs" : "http://www.southeasttech.edu/",
+            "name" : "Southeast Technical Institute",
+            "address" : {
+                "@type" : "PostalAddress",
+                "streetAddress": "2320 N. Career Ave",
+                "addressLocality": "Sioux Falls",
+                "addressRegion": "SD",
+                "addressCountry": "USA",
+                "postalCode": "57107"
+            }
+        }
+    }
+    </script>
 {% endblock %}
 {% block body %}
     <main role="main">
