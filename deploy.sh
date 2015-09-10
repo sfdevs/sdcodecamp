@@ -93,7 +93,7 @@ php -d extension=php_intl.dll $DEPLOYMENT_TARGET/composer.phar install -v --pref
 ######################
 # Remove Cache Directory
 # ---------------
-rmdir /S /Q "D:\home\site\wwwroot\app\cache\prod"
+rmdir /s /q "D:\home\site\wwwroot\app\cache\prod"
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
