@@ -30,6 +30,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        event_date: "November 7, 2015"
 
 # Assetic Configuration
 assetic:
