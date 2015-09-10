@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} &bull; {{ event_date }}{% endblock %}
 {% block meta_other %}
     <meta property="og:type" content="website" />
 {% endblock %}
