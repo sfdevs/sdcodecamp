@@ -59,11 +59,11 @@ export SYMFONY_ENV=prod
 
 cd "$DEPLOYMENT_SOURCE"
 # Invoke Composer, but without the scripts section because subprocesses don't have the correct user and permissions
-"D:\Program Files (x86)\PHP\v5.4\php.exe" composer.phar install --prefer-dist -v --no-scripts
+"D:\Program Files (x86)\PHP\v5.6\php.exe" composer.phar install --prefer-dist -v --no-scripts
 # Invoke the scripts section here manually, using right user and permissions
-"D:\Program Files (x86)\PHP\v5.4\php.exe" vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
-"D:\Program Files (x86)\PHP\v5.4\php.exe" app/console cache:clear
-"D:\Program Files (x86)\PHP\v5.4\php.exe" app/console assets:install web/
+"D:\Program Files (x86)\PHP\v5.6\php.exe" vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
+"D:\Program Files (x86)\PHP\v5.6\php.exe" app/console cache:clear
+"D:\Program Files (x86)\PHP\v5.6\php.exe" app/console assets:install web/
 
 echo Handling Basic Web Site deployment.
 
