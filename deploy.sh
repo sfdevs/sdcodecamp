@@ -66,8 +66,8 @@ fi
 ##################################################################################################################################
 # Download Composer
 # ----------
-echo Downloading Composer
-curl -sS https://getcomposer.org/installer | php
+#echo Downloading Composer
+#curl -sS https://getcomposer.org/installer | php
 
 ##################################################################################################################################
 # Deployment
@@ -87,13 +87,13 @@ fi
 # ----------
  
 # Invoke Composer in the deployment directory
-echo Invoking composer install in deployment directory $DEPLOYMENT_TARGET
-php -d extension=php_intl.dll $DEPLOYMENT_TARGET/composer.phar install -v --prefer-dist --no-dev --optimize-autoloader --no-interaction
+#echo Invoking composer install in deployment directory $DEPLOYMENT_TARGET
+#php -d extension=php_intl.dll $DEPLOYMENT_TARGET/composer.phar install -v --prefer-dist --no-dev --optimize-autoloader --no-interaction
 
 ######################
 # Remove Cache Directory
 # ---------------
-rmdir /s /q "D:\home\site\wwwroot\app\cache\prod"
+del D:/home/site/wwwroot/app/cache/prod/*
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
