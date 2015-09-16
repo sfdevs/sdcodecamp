@@ -85,7 +85,7 @@ fi
 ##################################################################################################################################
 # Dependency install
 # ----------
- 
+
 # Invoke Composer in the deployment directory
 echo Invoking composer install in deployment directory $DEPLOYMENT_TARGET
 php -d extension=php_intl.dll $DEPLOYMENT_TARGET/composer.phar install -v --prefer-dist --no-dev --optimize-autoloader --no-interaction
@@ -94,6 +94,8 @@ php -d extension=php_intl.dll $DEPLOYMENT_TARGET/composer.phar install -v --pref
 # Remove Cache Directory
 # ---------------
 del D:/home/site/wwwroot/app/cache/prod/*
+
+php app/console cache:warmup -e prod
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
