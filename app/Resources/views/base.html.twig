@@ -8,9 +8,9 @@
         <meta property="og:image" content="{{ app.request.uriForPath('/bundles/app/images/facebook_website_share.png') }}">
         <meta property="og:title" content="{{ block('title') }}" />
         <meta property="og:description" content="{{ block('meta_description') }}" />
-        <meta property="og:url" content="{{ url(app.request.attributes.get('_route')) }}" />
+        <meta property="og:url" content="{% if currentUrl is defined %}{{ currentUrl }}{% else %}{{ url(app.request.attributes.get('_route')) }}{% endif %}" />
         {% block meta_other %}{% endblock %}
-        <link rel="canonical" href="{{ url(app.request.attributes.get('_route')) }}" />
+        <link rel="canonical" href="{% if currentUrl is defined %}{{ currentUrl }}{% else %}{{ url(app.request.attributes.get('_route')) }}{% endif %}" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

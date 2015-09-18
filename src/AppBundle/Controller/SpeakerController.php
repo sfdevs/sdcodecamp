@@ -37,7 +37,7 @@ class SpeakerController extends Controller
         $speaker = $this->getDoctrine()
                         ->getRepository('AppBundle:Speaker')
                         ->find($id);
-        if (!$speaker || $speaker->getVisible() === true) {
+        if (!$speaker || !$speaker->getVisible()) {
             throw $this->createNotFoundException('Unable to find speaker');
         }
         return $this->render('speaker/show.html.twig',

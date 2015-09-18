@@ -1,5 +1,5 @@
 {% extends "::base.html.twig" %}
-
+{% set currentUrl = url('speaker_show', {'id': speaker.id}) %}
 {% block title %}{{ speaker.fullName }} | {{ parent() }}{% endblock %}
 
 {% block body %}
@@ -21,10 +21,10 @@
                 <p>Twitter: <a href="http://twitter.com/{{ speaker.twitter }}">{{ speaker.twitter }}</a>
                 {% endif %}
                 {% if speaker.company %}
-                <p>Company: {% if speaker.company_url %}<a href="{{ speaker.company_url }}" target="_blank">{% endif %}{{ speaker.company }}{% if speaker.company_url %}></a>{% endif %}
+                <p>Company: {% if speaker.companyUrl %}<a href="{{ speaker.companyUrl }}" target="_blank">{% endif %}{{ speaker.company }}{% if speaker.companyUrl %}</a>{% endif %}
                 {% endif %}
                 {% if speaker.personalSite %}
-                <p><a href="{{ speaker.personalSite }}" target="_blank">Personal Website</a>
+                <p><a href="{{ speaker.personalSite }}" target="_blank">{{ speaker.personalSite }}</a>
                 {% endif %}
             </div>
         </div>

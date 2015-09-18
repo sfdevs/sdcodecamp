@@ -1,5 +1,5 @@
-{% extends 'base.html.twig' %}
-
+{% extends "::base.html.twig" %}
+{% set currentUrl = url('session_show', {'id': session.id}) %}
 {% block title %}{{ session.title }} | {{ parent() }}{% endblock %}
 
 {% block body %}
@@ -7,7 +7,7 @@
 
         <h1 class="pagetitle cutout">{{ session.title }}</h1>
 
-        {#<p class="attribution">Presented by: <%= link_to @session.speaker.fullname, speaker_slug_path(@session.speaker.slug,@session.speaker) %></p>#}
+        <p class="attribution">Presented by: <a href="{{ path('speaker_show', {'id': session.speaker.id}) }}">{{ session.speaker }}</a></p>
 
         {#<% if @session.speaker_deck? %>#}
         {#<p class="links">Links: <a id="SpeakerDeckUrl" href="<%= @session.speaker_deck %>">Slides</a></p>#}

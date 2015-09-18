@@ -46,7 +46,7 @@ class SessionController extends Controller
         if (!$session) {
             throw $this->createNotFoundException('Unable to find session');
         }
-        return $this->render('session/show.html.twig'.
+        return $this->render('session/show.html.twig',
             array(
                 'session' => $session,
             )
