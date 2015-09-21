@@ -11,7 +11,7 @@
             <div class="bio">
                 <h6>Bio:</h6>
                 {% if speaker.bio %}
-                    {{ speaker.bio }}
+                    {{ speaker.bio|raw }}
                 {% else %}
                 <p>Bio coming soon...
                 {% endif %}

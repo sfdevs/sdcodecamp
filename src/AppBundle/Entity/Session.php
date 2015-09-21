@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Michelf\Markdown;
 
 /**
  * Session
@@ -144,6 +145,22 @@ class Session
         $this->speaker = $speaker;
 
         return $this;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersistFunctions()
+    {
+        $this->abstractMarkdown = Markdown::defaultTransform($this->abstract);
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function preUpdateFunctions()
+    {
+        $this->abstractMarkdown = Markdown::defaultTransform($this->abstract);
     }
 
     /**

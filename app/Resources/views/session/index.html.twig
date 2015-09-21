@@ -16,7 +16,7 @@
                     {#<% if session.speaker_deck? %>#}
                     {#<p class="links">Links: <a id="SpeakerDeckUrl" href="<%= session.speaker_deck %>">Slides</a></p>#}
                     {#<% end %>#}
-                    <p class="summary">{{ session.abstract }}</p>
+                    <p class="summary">{{ session.abstractMarkdown|raw }}</p>
                 </article>
             </li>
             {% endfor %}

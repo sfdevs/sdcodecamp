@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Michelf\Markdown;
 
 /**
  * Speaker
@@ -368,6 +369,22 @@ class Speaker
     public function removeSession(Session $sessions)
     {
         $this->sessions->removeElement($sessions);
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersistFunctions()
+    {
+        $this->bio = Markdown::defaultTransform($this->bio);
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function preUpdateFunctions()
+    {
+        $this->bio = Markdown::defaultTransform($this->bio);
     }
 
     /**
