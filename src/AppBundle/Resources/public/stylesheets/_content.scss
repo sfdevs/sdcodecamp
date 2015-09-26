@@ -173,20 +173,6 @@ h4.cutout {
     margin: 1em 0 1em 1em;
 }
 
-.sponsor-index {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        margin-bottom: 2em;
-    }
-    img {
-        max-width: 10em;
-    }
-}
-
 @media only screen and (min-width: 30em) {
     .hero {
         padding: 3em 0;
@@ -246,12 +232,6 @@ h4.cutout {
     h4.cutout {
         letter-spacing: .2em;
     }
-
-    .sponsor-index {
-        img {
-            max-width: 20em;
-        }
-    }
 }
 
 @media only screen and (min-width: 48em) {
@@ -307,11 +287,6 @@ h4.cutout {
         }
     }
 
-    .sponsor-index {
-        img {
-            max-width: 25em;
-        }
-    }
     .tweet-container {
         display: inline-block;
         max-width: 49%
@@ -334,11 +309,5 @@ h4.cutout {
     .updates {
         @include css3-calc('padding-left', '50% - 27em');
         @include css3-calc('padding-right', '50% - 27em');
-    }
-
-    .sponsor-index {
-        img {
-            max-width: 30em;
-        }
     }
 }

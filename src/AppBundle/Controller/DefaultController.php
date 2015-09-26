@@ -5,6 +5,11 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Subscriber;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class DefaultController
+ *
+ * @package AppBundle\Controller
+ */
 class DefaultController extends SubscriberTypeController
 {
     /**
@@ -35,5 +40,14 @@ class DefaultController extends SubscriberTypeController
     public function venueAction()
     {
         return $this->render('default/venue.html.twig');
+    }
+
+    /**
+     * @Route("/sponsors/", name="page_sponsors")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function sponsorAction()
+    {
+        return $this->render('default/sponsor.html.twig');
     }
 }

@@ -31,6 +31,7 @@ class MenuBuilder
         $menu->addChild('Speakers', array('route'=> 'speaker_index'));
         $menu->addChild('Sessions', array('route'=> 'session_index'));
         $menu->addChild('Venue', array('route'=> 'page_venue'));
+        $menu->addChild('Sponsors', array('route'=> 'page_sponsors'));
 
         $RouteVoter = new RouteVoter();
         $RouteVoter->setRequest($currentRequest);

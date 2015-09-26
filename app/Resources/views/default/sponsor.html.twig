@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}2015 Sponsors | {{ parent() }}{% endblock %}
+{% block meta_description %}South Dakota Code Camp would not be possible without our sponsors. Learn more about our sponsors.{% endblock %}
+{% block body %}
+    <style>
+        .sponsor-section:last-child {border-bottom: none;}
+        .sponsor-section img {border: 1px solid #888;}
+        .sponsor-section h2 {border-bottom: 1px solid #888; margin-bottom: .5em; margin-top: 1em; text-shadow: none;}
+        .sponsor-section h3 {text-shadow: none;}
+        .sponsor-section .sponsor {display: inline-block;width: 100%}
+        @media only screen and (min-width: 48em) {
+            .sponsor-section.gold .sponsor {max-width: 50%;}
+            .sponsor-section.silver .sponsor {max-width: 30%;}
+        }
+    </style>
+    <section class="page-content clearfix sponsor-index ">
+        <h1>2015 South Dakota Code Camp Sponsors</h1>
+
+        <p>
+            South Dakota Code Camp would not be possible without sponsors. Sponsors account for
+            100% of the costs of bringing Code Camp to South Dakota. Please take a few moments to
+            learn more about and thank this year's sponsors.
+        </p>
+        <p>
+            Intersted in becoming a sponsor? Email <a href="mailto:sdcodecamp@gmail.com">sdcodecamp[at]gmail.com</a> for details.
+        </p>
+
+        <div class="sponsor-section gold" id="GoldSponsors">
+            <h2>Gold Sponsors</h2>
+            <div class="sponsor">
+                <a href="http://blendinteractive.com" target="_blank">
+                    <img src="{{ asset('bundles/app/images/blend_logo.jpg') }}" title="Blend Interactive" />
+                </a>
+                <h3><a href="http://blendinteractive.com" target="_blank">Blend Interactive</a></h3>
+            </div>
+        </div>
+        <div class="sponsor-section silver" id="SilverSponsors">
+            <h2>Silver Sponsors</h2>
+            <div class="sponsor">
+                <a href="http://www.chrsolutions.com/" target="_blank">
+                    <img src="{{ asset('bundles/app/images/chr_logo.jpg') }}" title="CHR Solutions" />
+                </a>
+                <h3><a href="http://www.chrsolutions.com/" target="_blank">CHR Solutions</a></h3>
+            </div>
+        </div>
+        <div class="sponsor-section" id="SilverSponsors">
+            <h2>Venue Host</h2>
+            <div class="sponsor">
+                <a href="http://www.southeasttech.edu/" target="_blank">
+                    <img src="{{ asset('bundles/app/images/southeasttech_logo.jpg') }}" title="Southeast Tech" />
+                </a>
+                <h3><a href="http://www.southeasttech.edu/" target="_blank">Southeast Tech</a></h3>
+            </div>
+        </div>
+    </section>
+{% endblock %}
