@@ -30,8 +30,9 @@ class MenuBuilder
         //        $menu->addChild('Home', array('route' => 'homepage'));
         $menu->addChild('Speakers', array('route'=> 'speaker_index'));
         $menu->addChild('Sessions', array('route'=> 'session_index'));
-        $menu->addChild('Venue', array('route'=> 'page_venue'));
         $menu->addChild('Sponsors', array('route'=> 'page_sponsors'));
+        $menu->addChild('Schedule', array('route'=> 'page_schedule'));
+        $menu->addChild('Venue', array('route'=> 'page_venue'));
 
         $RouteVoter = new RouteVoter();
         $RouteVoter->setRequest($currentRequest);
@@ -58,4 +59,4 @@ class MenuBuilder
     {
         return strstr($currentUrl, $menuUrl);
     }
-} 
+}

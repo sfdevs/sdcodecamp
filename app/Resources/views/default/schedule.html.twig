@@ -1,0 +1,185 @@
+{% extends 'base.html.twig' %}
+{% block title %}2015 Schedule | {{ parent() }}{% endblock %}
+{% block meta_description %}South Dakota Code Camp 2015 Schedule.{% endblock %}
+{% block body %}
+    <style>
+        .sponsor-section:last-child {border-bottom: none;}
+        .sponsor-section img {border: 1px solid #888;}
+        .sponsor-section h2 {border-bottom: 1px solid #888; margin-bottom: .5em; margin-top: 1em; text-shadow: none;}
+        .sponsor-section h3 {text-shadow: none;}
+        .sponsor-section .sponsor {display: inline-block;width: 100%}
+        @media only screen and (min-width: 48em) {
+            .sponsor-section.gold .sponsor {max-width: 50%;}
+            .sponsor-section.silver .sponsor {max-width: 30%;}
+        }
+    </style>
+    <section class="page-content clearfix sponsor-index ">
+        <h1>2015 South Dakota Code Camp Schedule</h1>
+      <p>
+      	Note: The schedule is subject to change up until the day of the event.
+      </p>
+      <h2>
+      	Saturday, 11/7
+      </h2>
+      <table border="1" align="center">
+      	<thead align="center">
+      		<tr>
+      			<td>
+      				Time
+      			</td>
+      			<td>
+      				Room 1
+      			</td>
+      			<td>
+      				Room 2
+      			</td>
+      			<td>
+      				Room 3
+      			</td>
+      		</tr>
+      	</thead>
+      	<tbody><tr align="center">
+      		<td>
+      			8:00 - 8:40
+      		</td>
+      		<td colspan="3">
+      			Registration
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			8:40 - 8:50
+      		</td>
+      		<td colspan="7">
+      			Welcome and Introduction From SDCC Leadership Team in Room 1
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td align="center">
+      			9:00 - 10:00
+      		</td>
+          <td>
+      			<a href="/sessions/161">A Principled Approach to Software Management</a><br>
+      			<i><a href="/speakers/141">Brian Matherly</a></i>
+      		</td>
+
+      		<td>
+      			<a href="/sessions/181">An Introduction to Clojure</a><br>
+      			<i><a href="/speakers/161">Thomas Meier</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/171">Smarter Responsive Design</a><br>
+      			<i><a href="/speakers/151">Sam Otis</a></i>
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			10:00 - 10:15
+      		</td>
+      		<td colspan="3">
+      			Break
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td align="center">
+      			10:15 - 11:15
+      		</td>
+      		<td>
+      			<a href="/sessions/151">Push/Pull: Or how to avoid idle talk</a><br>
+      			<i><a href="/speakers/131">Ivan Ven Osdel</a></i>
+      		</td>
+          <td>
+      			<a href="/sessions/71">HTTP interfaces for PHP</a><br>
+      			<i><a href="/speakers/51">Matthew Weier O'Phinney</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/141">PostCSS: A Dumb Name For an Awesome Thing</a><br>
+      			<i><a href="/speakers/111">Miles Rausch</a></i>
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			11:30 - 1:00
+      		</td>
+      		<td colspan="3">
+      			Lunch Break <br />
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			1:00 - 2:00
+      		</td>
+          <td>
+            <a href="/sessions/131">Hour of Code</a><br>
+            <i><a href="/speakers/121">Savannah Boedigheimer</a></i>
+          </td>
+      		<td>
+      			<a href="/sessions/121">Software Architecture Made Easy</a><br>
+      			<i><a href="/speakers/101">Ken Versaw</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/11">The Resilient Web</a><br>
+      			<i><a href="/speakers/1">Bryan Burgers</a></i>
+      		</td>
+      	</tr>
+        <tr align="center">
+          <td>
+            2:00 - 2:15
+          </td>
+          <td colspan="3">
+            Break
+          </td>
+        </tr>
+      	<tr align="center">
+      		<td align="center">
+      			2:15 - 3:15
+      		</td>
+      		<td>
+      			<a href="/sessions/61">Cryptography 101</a><br>
+      			<i><a href="/speakers/21">Robert Boedigheimer</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/51">Getting Started with 3D Printing</a><br>
+      			<i><a href="/speakers/41">Adam Barney</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/1">Orchestration and Configuration Management with Ansible</a><br>
+      			<i><a href="/speakers/11">Jackson Murtha</a></i>
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			3:15 - 3:30
+      		</td>
+      		<td colspan="7">
+      			Break
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td align="center">
+      			3:30 - 4:30
+      		</td>
+          <td>
+            <a href="/sessions/21">HTTP/2: What You Need to Know</a><br>
+            <i><a href="/speakers/21">Robert Boedigheimer</a></i>
+          </td>
+      		<td>
+      			<a href="/sessions/41">Electronics 101 for IoT Developers</a><br>
+      			<i><a href="/speakers/41">Adam Barney</a></i>
+      		</td>
+      		<td>
+      			<a href="/sessions/101">Using Visual Studio Online's new build system</a><br>
+      			<i><a href="/speakers/91">Kevin Logan</a></i>
+      		</td>
+      	</tr>
+      	<tr align="center">
+      		<td>
+      			4:40 - 5:00
+      		</td>
+      		<td colspan="3">
+      			Closing Remarks in Room 1
+      		</td>
+      	</tr>
+      </tbody></table>
+    </section>
+{% endblock %}

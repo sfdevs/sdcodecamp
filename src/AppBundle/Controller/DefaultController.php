@@ -50,4 +50,13 @@ class DefaultController extends SubscriberTypeController
     {
         return $this->render('default/sponsor.html.twig');
     }
+
+    /**
+     * @Route("/schedule/", name="page_schedule")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function scheduleAction()
+    {
+        return $this->render('default/schedule.html.twig');
+    }
 }
