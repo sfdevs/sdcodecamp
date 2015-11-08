@@ -95,7 +95,7 @@ fi
 # ---------------
 #del D:/home/site/wwwroot/app/cache/prod/*
 
-php app/console cache:clear -e prod --no-wamup
+php app/console cache:clear -e prod --no-warmup
 php app/console cache:warmup -e prod
 
 # Post deployment stub
