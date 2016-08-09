@@ -30,14 +30,17 @@
     <main role="main">
         <section class="hero">
             <div class="line1">
-                Nov. 7th 2015
+                {{ event_date }}
             </div>
             <div class="line2">
-                 See you there!
+                 We need speakers!
             </div>
             <div class="line3">
-                <a href="https://www.eventbrite.com/e/south-dakota-code-camp-2015-tickets-18964572547" class="button">Register</a>
+                <a href="{{ path('speaker_submission_new') }}" class="button">Call for Speakers</a>
             </div>
+            {#<div class="line3">#}
+                {#<a href="https://www.eventbrite.com/e/south-dakota-code-camp-2015-tickets-18964572547" class="button">Register</a>#}
+            {#</div>#}
         </section>
         <section class="main-content">
             <h2 class="cutout" style="font-size: 3em;">What is Code Camp?</h2>
@@ -52,13 +55,13 @@
             </p>
         </section>
     </main>
-    <section class="updates" role="complimentary">
-        <h2 class="cutout" style="font-size: 3em;">Register</h2>
-        <h4 class="cutout">
-            November 7th, 2015
-        </h4>
-        <div style="width:100%; text-align:left;" ><iframe  src="//eventbrite.com/tickets-external?eid=18964572547&ref=etckt" frameborder="0" height="250" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #dddddd; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Powered by Eventbrite</a></div></div>
-    </section>
+    {#<section class="updates" role="complimentary">#}
+        {#<h2 class="cutout" style="font-size: 3em;">Register</h2>#}
+        {#<h4 class="cutout">#}
+            {#{{ event_date }}#}
+        {#</h4>#}
+        {#<div style="width:100%; text-align:left;" ><iframe  src="//eventbrite.com/tickets-external?eid=18964572547&ref=etckt" frameborder="0" height="250" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #dddddd; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Powered by Eventbrite</a></div></div>#}
+    {#</section>#}
 {% endblock %}
 
 {% block body_extra %}

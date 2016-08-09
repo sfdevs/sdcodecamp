@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
-{% block title %}Venue | {{ parent() }}{% endblock %}
-{% block meta_description %}The next South Dakota Code Camp will be happening on November 7, 2015 at Southeast Technical Institute in Sioux Falls, SD.{% endblock %}
+{% block title %}{{ event_date_iso|date('Y') }} Venue | {{ parent() }}{% endblock %}
+{% block meta_description %}The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast Technical Institute in Sioux Falls, SD.{% endblock %}
 {% block body %}
     <section class="page-content clearfix">
         <h1>Venue</h1>
 
         <p>
-            The next South Dakota Code Camp will be happening on November 7, 2015 at Southeast
+            The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast
             Technical Institute in the Sullivan Health Science Center. <a href="https://goo.gl/maps/anemCHNvdkv">Click here for directions.</a>
         </p>
 

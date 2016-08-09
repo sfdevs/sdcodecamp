@@ -31,8 +31,8 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     globals:
-        event_date: "November 7, 2015"
-        event_date_iso: "2015-11-07"
+        event_date: "November 5, 2016"
+        event_date_iso: "2016-11-05"
 
 # Assetic Configuration
 assetic:

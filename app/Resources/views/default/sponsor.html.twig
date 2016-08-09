@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}2015 Sponsors | {{ parent() }}{% endblock %}
+{% block title %}{{ event_date_iso|date('Y') }} Sponsors | {{ parent() }}{% endblock %}
 {% block meta_description %}South Dakota Code Camp would not be possible without our sponsors. Learn more about our sponsors.{% endblock %}
 {% block body %}
     <style>
@@ -14,7 +14,7 @@
         }
     </style>
     <section class="page-content clearfix sponsor-index ">
-        <h1>2015 South Dakota Code Camp Sponsors</h1>
+        <h1>2016 South Dakota Code Camp Sponsors</h1>
 
         <p>
             South Dakota Code Camp would not be possible without sponsors. Sponsors account for
@@ -24,46 +24,6 @@
         <p>
             Interested in becoming a sponsor? Email <a href="mailto:sdcodecamp@gmail.com">sdcodecamp[at]gmail.com</a> for details.
         </p>
-
-        <div class="sponsor-section gold" id="GoldSponsors">
-            <h2>Gold Sponsors</h2>
-            <div class="sponsor">
-                <a href="http://blendinteractive.com" target="_blank">
-                    <img src="{{ asset('bundles/app/images/blend_logo.jpg') }}" title="Blend Interactive" />
-                </a>
-                <h3><a href="http://blendinteractive.com" target="_blank">Blend Interactive</a></h3>
-            </div>
-            <div class="sponsor">
-                <a href="http://midcocomm.com" target="_blank">
-                    <img src="{{ asset('bundles/app/images/midco_logo.png') }}" title="Midcontinent Communications" />
-                </a>
-                <h3><a href="http://midcocomm.com" target="_blank">Midcontinent Communications</a></h3>
-            </div>
-            <div class="sponsor">
-                <a href="http://www.ravenind.com" target="_blank">
-                    <img src="{{ asset('bundles/app/images/raven_logo.png') }}" title="Raven Industries" />
-                </a>
-                <h3><a href="http://www.ravenind.com" target="_blank">Raven Industries</a></h3>
-            </div>
-        </div>
-        <div class="sponsor-section silver" id="SilverSponsors">
-            <h2>Silver Sponsors</h2>
-            <div class="sponsor">
-                <a href="http://www.omnitech-inc.com" target="_blank">
-                    <img src="{{ asset('bundles/app/images/omnitech_logo.png') }}" title="Omnitech" />
-                </a>
-                <h3><a href="http://www.omnitech-inc.com" target="_blank">Omnitech</a></h3>
-            </div>
-        </div>
-        <div class="sponsor-section" id="AfterPartySponsors">
-            <h2>After Party Sponsor</h2>
-            <div class="sponsor">
-                <a href="http://www.zuerchertech.com/" target="_blank">
-                    <img src="{{ asset('bundles/app/images/zuercher_logo.png') }}" title="Zuercher Technologies" />
-                </a>
-                <h3><a href="http://www.zuerchertech.com/" target="_blank">Zuercher Technologies</a></h3>
-            </div>
-        </div>
         <div class="sponsor-section" id="VenueSponsors">
             <h2>Venue Host</h2>
             <div class="sponsor">
