@@ -31,6 +31,9 @@
         "sensio/generator-bundle": "~2.3"
     },
     "scripts": {
+        "compile": [
+            "app/console assetic:dump"
+        ],
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"
         ],
