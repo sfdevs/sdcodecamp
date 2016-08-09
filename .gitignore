@@ -18,3 +18,5 @@
 
 # managed by composer
 app/SymfonyRequirements.php
+/app/Resources/node_modules
+/node_modules
