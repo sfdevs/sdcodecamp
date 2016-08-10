@@ -7,6 +7,7 @@ use AppBundle\Form\SpeakerSubmissionType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -82,7 +83,7 @@ class SpeakerSubmissionController extends Controller
                 'method' => 'POST',
             ));
 
-        $form->add('submit', 'submit', array('label' => 'Submit'));
+        $form->add('submit', SubmitType::class, array('label' => 'Submit'));
         return $form;
     }
 }

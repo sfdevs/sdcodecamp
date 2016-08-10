@@ -28,7 +28,7 @@ class MenuBuilder
 
     /**
      * @param RequestStack $requestStack
-     * 
+     *
      * @return \Knp\Menu\ItemInterface
      */
     public function createMainMenu(RequestStack $requestStack)
