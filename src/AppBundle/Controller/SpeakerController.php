@@ -20,8 +20,8 @@ class SpeakerController extends Controller
     public function indexAction()
     {
         $speakers = $this->getDoctrine()
-                         ->getRepository('AppBundle:Speaker')
-                         ->findBy(['visible'=>true]);
+            ->getRepository('AppBundle:Speaker')
+            ->findBy(['visible' => true]);
         return $this->render('speaker/index.html.twig',
             array(
                 'speakers' => $speakers,
@@ -35,15 +35,15 @@ class SpeakerController extends Controller
     public function showAction($id)
     {
         $speaker = $this->getDoctrine()
-                        ->getRepository('AppBundle:Speaker')
-                        ->find($id);
+            ->getRepository('AppBundle:Speaker')
+            ->find($id);
         if (!$speaker || !$speaker->getVisible()) {
             throw $this->createNotFoundException('Unable to find speaker');
         }
         return $this->render('speaker/show.html.twig',
-             array(
-                 'speaker' => $speaker,
-             )
+            array(
+                'speaker' => $speaker,
+            )
         );
     }
 

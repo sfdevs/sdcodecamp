@@ -1,4 +1,12 @@
 services:
+    # Admin Services
+    admin.category:
+        class: AppBundle\Admin\SpeakerAdmin
+        arguments: [~, AppBundle\Entity\Speaker, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Speaker }
+
+    # Menu
     app.menu_builder:
         class: AppBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory"]

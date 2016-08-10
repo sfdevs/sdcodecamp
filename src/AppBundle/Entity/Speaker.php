@@ -71,6 +71,13 @@ class Speaker
     /**
      * @var string
      *
+     * @ORM\Column(name="bio_markdown", type="text", nullable=true)
+     */
+    private $bioMarkdown;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
     private $twitter;
@@ -257,6 +264,22 @@ class Speaker
     }
 
     /**
+     * @return string
+     */
+    public function getBioMarkdown()
+    {
+        return $this->bioMarkdown;
+    }
+
+    /**
+     * @param string $bioMarkdown
+     */
+    public function setBioMarkdown($bioMarkdown)
+    {
+        $this->bioMarkdown = $bioMarkdown;
+    }
+
+    /**
      * Set twitter
      *
      * @param string $twitter
@@ -376,7 +399,7 @@ class Speaker
      */
     public function prePersistFunctions()
     {
-        $this->bio = Markdown::defaultTransform($this->bio);
+        $this->bioMarkdown = Markdown::defaultTransform($this->bio);
     }
 
     /**
@@ -384,7 +407,7 @@ class Speaker
      */
     public function preUpdateFunctions()
     {
-        $this->bio = Markdown::defaultTransform($this->bio);
+        $this->bioMarkdown = Markdown::defaultTransform($this->bio);
     }
 
     /**
