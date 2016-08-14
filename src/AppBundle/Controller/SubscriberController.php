@@ -22,8 +22,7 @@ class SubscriberController extends SubscriberTypeController
         $form = $this->createCreateForm($subscriber);
         $form->handleRequest($request);
 
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($subscriber);
             $em->flush();
@@ -37,9 +36,9 @@ class SubscriberController extends SubscriberTypeController
         }
 
         return $this->render("subscriber/new.html.twig", array(
-                'subscriber' => $subscriber,
-                'form' => $form->createView(),
-            ));
+            'subscriber' => $subscriber,
+            'form' => $form->createView(),
+        ));
     }
 
     /**
@@ -53,8 +52,8 @@ class SubscriberController extends SubscriberTypeController
         $subscriber = new Subscriber();
         $form = $this->createCreateForm($subscriber);
         return $this->render("subscriber/new.html.twig", array(
-                'subscriber' => $subscriber,
-                'form' => $form->createView(),
-            ));
+            'subscriber' => $subscriber,
+            'form' => $form->createView(),
+        ));
     }
 }
