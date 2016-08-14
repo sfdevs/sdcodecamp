@@ -78,7 +78,7 @@ class SpeakerSubmissionController extends Controller
      */
     private function createCreateForm(SpeakerSubmission $submission)
     {
-        $form = $this->createForm('AppBundle\Form\SubscriberType', $submission, array(
+        $form = $this->createForm('AppBundle\Form\SpeakerSubmissionType', $submission, array(
                 'action' => $this->generateUrl("speaker_submission_create"),
                 'method' => 'POST',
             ));
