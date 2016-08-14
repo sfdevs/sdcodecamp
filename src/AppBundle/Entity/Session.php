@@ -47,6 +47,13 @@ class Session
     private $abstract;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean")
+     */
+    private $visible;
+
+    /**
      * @var Speaker
      *
      * @ORM\ManyToOne(targetEntity="Speaker", inversedBy="sessions")
@@ -58,7 +65,7 @@ class Session
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -81,7 +88,7 @@ class Session
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -104,7 +111,7 @@ class Session
     /**
      * Get abstractMarkdown
      *
-     * @return string 
+     * @return string
      */
     public function getAbstractMarkdown()
     {
@@ -127,11 +134,27 @@ class Session
     /**
      * Get abstract
      *
-     * @return string 
+     * @return string
      */
     public function getAbstract()
     {
         return $this->abstract;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * @param boolean $visible
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
     }
 
     /**
