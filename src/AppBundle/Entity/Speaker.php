@@ -118,7 +118,7 @@ class Speaker
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -141,7 +141,7 @@ class Speaker
     /**
      * Get firstName
      *
-     * @return string 
+     * @return string
      */
     public function getFirstName()
     {
@@ -164,7 +164,7 @@ class Speaker
     /**
      * Get lastName
      *
-     * @return string 
+     * @return string
      */
     public function getLastName()
     {
@@ -187,7 +187,7 @@ class Speaker
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -210,9 +210,9 @@ class Speaker
     /**
      * Get visible
      *
-     * @return boolean 
+     * @return boolean
      */
-    public function getVisible()
+    public function isVisible()
     {
         return $this->visible;
     }
@@ -233,7 +233,7 @@ class Speaker
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -256,7 +256,7 @@ class Speaker
     /**
      * Get bio
      *
-     * @return string 
+     * @return string
      */
     public function getBio()
     {
@@ -295,7 +295,7 @@ class Speaker
     /**
      * Get twitter
      *
-     * @return string 
+     * @return string
      */
     public function getTwitter()
     {
@@ -318,7 +318,7 @@ class Speaker
     /**
      * Get company
      *
-     * @return string 
+     * @return string
      */
     public function getCompany()
     {
@@ -341,7 +341,7 @@ class Speaker
     /**
      * Get companyUrl
      *
-     * @return string 
+     * @return string
      */
     public function getCompanyUrl()
     {
@@ -364,7 +364,7 @@ class Speaker
     /**
      * Get personalSite
      *
-     * @return string 
+     * @return string
      */
     public function getPersonalSite()
     {
@@ -413,7 +413,7 @@ class Speaker
     /**
      * Get sessions
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSessions()
     {

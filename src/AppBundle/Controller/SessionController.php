@@ -22,13 +22,12 @@ class SessionController extends Controller
     public function indexAction()
     {
         $sessions = $this->getDoctrine()
-                        ->getRepository('AppBundle:Session')
-                        ->findAll();
-        return $this->render('session/index.html.twig',
-            array(
-                'sessions' => $sessions,
-            )
-        );
+            ->getRepository('AppBundle:Session')
+            ->findBy(['visible' => true]);
+
+        return $this->render('session/index.html.twig', [
+            'sessions' => $sessions,
+        ]);
     }
 
     /**
@@ -41,15 +40,14 @@ class SessionController extends Controller
     public function showAction($id)
     {
         $session = $this->getDoctrine()
-                        ->getRepository('AppBundle:Session')
-                        ->find($id);
-        if (!$session) {
+            ->getRepository('AppBundle:Session')
+            ->find($id);
+        if (!$session || !$session->isVisible()) {
             throw $this->createNotFoundException('Unable to find session');
         }
-        return $this->render('session/show.html.twig',
-            array(
-                'session' => $session,
-            )
-        );
+
+        return $this->render('session/show.html.twig', [
+            'session' => $session,
+        ]);
     }
 }
