@@ -111,7 +111,8 @@ class Speaker
     private $sessions;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->sessions = new ArrayCollection();
     }
 

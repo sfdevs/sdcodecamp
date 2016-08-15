@@ -54,6 +54,13 @@ class Session
     private $visible;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @var Speaker
      *
      * @ORM\ManyToOne(targetEntity="Speaker", inversedBy="sessions")
@@ -155,6 +162,22 @@ class Session
     public function setVisible($visible)
     {
         $this->visible = $visible;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**

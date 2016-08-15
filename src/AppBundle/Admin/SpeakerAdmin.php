@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -30,7 +31,7 @@ class SpeakerAdmin extends AbstractAdmin
                     ->add('first_name', TextType::class)
                     ->add('last_name', TextType::class)
                     ->add('email', EmailType::class)
-                    ->add('bio_markdown', TextareaType::class)
+                    ->add('bio', TextareaType::class)
                     ->add('twitter', TextType::class, [
                         'required' => false
                     ])
@@ -42,6 +43,11 @@ class SpeakerAdmin extends AbstractAdmin
                     ])
                     ->add('personal_site', TextType::class, [
                         'required' => false
+                    ])
+                    ->add('sessions', EntityType::class, [
+                        'class' => 'AppBundle\Entity\Session',
+                        'multiple' => true,
+                        'required' => false,
                     ])
                 ->end()
             ->end()
@@ -82,6 +88,19 @@ class SpeakerAdmin extends AbstractAdmin
      * @param Speaker $speaker
      */
     public function prePersist($speaker)
+    {
+        if ($speaker->getSlug() === null || $speaker->getSlug() === '') {
+            $name = $speaker->getFullName();
+            $slugifier = new Slugify();
+            $slug = $slugifier->slugify($name);
+            $speaker->setSlug($slug);
+        }
+    }
+
+    /**
+     * @param Speaker $speaker
+     */
+    public function preUpdate($speaker)
     {
         if ($speaker->getSlug() === null || $speaker->getSlug() === '') {
             $name = $speaker->getFullName();
