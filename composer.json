@@ -40,9 +40,6 @@
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
-        "compile": [
-            "bin/console assetic:dump"
-        ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
