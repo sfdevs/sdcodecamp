@@ -41,7 +41,7 @@
     },
     "scripts": {
         "compile": [
-            "app/console assetic:dump"
+            "bin/console assetic:dump"
         ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
