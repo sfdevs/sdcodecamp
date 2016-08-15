@@ -1,9 +1,6 @@
 imports:
+    - { resource: parameters.php }
     - { resource: config.yml }
-
-#framework:
-#    validation:
-#        cache: apc
 
 #doctrine:
 #    orm:

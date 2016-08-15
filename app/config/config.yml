@@ -1,8 +1,11 @@
 imports:
-#    - { resource: parameters.yml }
-    - { resource: parameters.php }
     - { resource: security.yml }
     - { resource: services.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
 
 framework:
     #esi:             ~
@@ -14,17 +17,19 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
     session:
-        # handler_id set to null will use default session handler from php.ini
-        handler_id:  ~
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
     fragments:       ~
     http_method_override: true
+    assets: ~
 
 # Twig Configuration
 twig:
@@ -41,16 +46,8 @@ assetic:
     bundles:
         - 'FOSUserBundle'
         - 'TwigBundle'
-    #java: /usr/bin/java
-    # ruby: ~
     filters:
         cssrewrite: ~
-#        uglifyjs2:
-#            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifyjs
-#            mangle: true
-#            screw-ie8: true
-#        uglifycss:
-#            bin: %kernel.root_dir%/Resources/node_modules/.bin/uglifycss
 
 # Doctrine Configuration
 doctrine:
@@ -64,6 +61,7 @@ doctrine:
         charset:  UTF8
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
 # Swiftmailer Configuration
