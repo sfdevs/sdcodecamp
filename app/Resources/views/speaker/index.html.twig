@@ -16,6 +16,8 @@
         </li>
         {% endfor %}
     </ul>
+    {% else %}
+        <p><a class="button" href="{{ path('speaker_submission_new') }}" style="color: white;">Call for Speakers</a></p>
     {% endif %}
 </section>
 {% endblock %}
