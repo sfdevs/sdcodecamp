@@ -67,10 +67,10 @@ class Session
      * @ORM\ManyToMany(targetEntity="Speaker", mappedBy="sessions")
      */
     private $speakers;
-     * @ORM\JoinColumn(name="session_id", referencedColumnName="id")
-     */
-    private $speaker;
 
+    /**
+     * Session constructor.
+     */
     public function __construct()
     {
         $this->speakers = new ArrayCollection();
@@ -188,7 +188,7 @@ class Session
     }
 
     /**
-     * Set speaker
+     * Add speaker
      *
      * @param Speaker $speaker
      * @return Session
@@ -200,6 +200,9 @@ class Session
         return $this;
     }
 
+    /**
+     * @param Speaker $speaker
+     */
     public function removeSpeaker(Speaker $speaker)
     {
         $this->speakers->removeElement($speaker);
@@ -230,12 +233,10 @@ class Session
     {
         return $this->speakers;
     }
-     */
-    public function getSpeaker()
-    {
-        return $this->speaker;
-    }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->title;
