@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Form\Type\ModelType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -44,7 +45,7 @@ class SpeakerAdmin extends AbstractAdmin
                     ->add('personal_site', TextType::class, [
                         'required' => false
                     ])
-                    ->add('sessions', EntityType::class, [
+                    ->add('sessions', ModelType::class, [
                         'class' => 'AppBundle\Entity\Session',
                         'multiple' => true,
                         'required' => false,

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Michelf\Markdown;
 
@@ -61,13 +62,19 @@ class Session
     private $slug;
 
     /**
-     * @var Speaker
+     * @var ArrayCollection
      *
-     * @ORM\ManyToOne(targetEntity="Speaker", inversedBy="sessions")
+     * @ORM\ManyToMany(targetEntity="Speaker", mappedBy="sessions")
+     */
+    private $speakers;
      * @ORM\JoinColumn(name="session_id", referencedColumnName="id")
      */
     private $speaker;
 
+    public function __construct()
+    {
+        $this->speakers = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -186,11 +193,16 @@ class Session
      * @param Speaker $speaker
      * @return Session
      */
-    public function setSpeaker(Speaker $speaker = null)
+    public function addSpeaker(Speaker $speaker = null)
     {
-        $this->speaker = $speaker;
+        $this->speakers[] = $speaker;
 
         return $this;
+    }
+
+    public function removeSpeaker(Speaker $speaker)
+    {
+        $this->speakers->removeElement($speaker);
     }
 
     /**
@@ -212,7 +224,12 @@ class Session
     /**
      * Get speaker
      *
-     * @return Speaker
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSpeakers()
+    {
+        return $this->speakers;
+    }
      */
     public function getSpeaker()
     {

@@ -106,7 +106,8 @@ class Speaker
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Session", mappedBy="speaker")
+     * @ORM\ManyToMany(targetEntity="Session", inversedBy="speakers")
+     * @ORM\JoinTable(name="speaker_sessions")
      */
     private $sessions;
 
@@ -388,11 +389,11 @@ class Speaker
     /**
      * Remove sessions
      *
-     * @param Session $sessions
+     * @param Session $session
      */
-    public function removeSession(Session $sessions)
+    public function removeSession(Session $session)
     {
-        $this->sessions->removeElement($sessions);
+        $this->sessions->removeElement($session);
     }
 
     /**
