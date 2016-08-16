@@ -193,7 +193,7 @@ class Session
      * @param Speaker $speaker
      * @return Session
      */
-    public function addSpeaker(Speaker $speaker = null)
+    public function addSpeaker(Speaker $speaker)
     {
         $this->speakers[] = $speaker;
 
@@ -241,5 +241,4 @@ class Session
     {
         return $this->title;
     }
-
 }
