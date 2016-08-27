@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\GoneHttpException;
 
 /**
  * Class DefaultController
@@ -68,6 +69,7 @@ class DefaultController extends SubscriberTypeController
      */
     public function scheduleAction()
     {
+        throw new GoneHttpException('The schedule is not currently available');
         return $this->render('default/schedule.html.twig');
     }
 }
