@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\GoneHttpException;
 
 /**
- * Class DefaultController
+ * Class DefaultController.
  *
  * @package AppBundle\Controller
  */
@@ -35,6 +35,7 @@ class DefaultController extends SubscriberTypeController
             // return the 304 Response immediately
             return $response;
         }
+
         return $this->render('default/index.html.twig', [], $response);
     }
 
@@ -56,6 +57,7 @@ class DefaultController extends SubscriberTypeController
 
     /**
      * @Route("/sponsors/", name="page_sponsors")
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function sponsorAction()
@@ -64,12 +66,24 @@ class DefaultController extends SubscriberTypeController
     }
 
     /**
+     * @Route("/code-of-conduct/", name="page_code_of_conduct")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function codeOfConductAction()
+    {
+        return $this->render('default/code-of-conduct.html.twig');
+    }
+
+    /**
      * @Route("/schedule/", name="page_schedule")
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function scheduleAction()
     {
         throw new GoneHttpException('The schedule is not currently available');
+
         return $this->render('default/schedule.html.twig');
     }
 }

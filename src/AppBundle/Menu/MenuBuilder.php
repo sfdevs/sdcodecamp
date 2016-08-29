@@ -6,9 +6,9 @@ use Knp\Menu\FactoryInterface;
 use Knp\Menu\Matcher\Voter\RouteVoter;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-
 /**
- * Class MenuBuilder
+ * Class MenuBuilder.
+ *
  * @package AppBundle\Menu
  */
 class MenuBuilder
@@ -41,6 +41,7 @@ class MenuBuilder
         $menu->addChild('Sessions', array('route' => 'session_index'));
         $menu->addChild('Sponsors', array('route' => 'page_sponsors'));
 //        $menu->addChild('Schedule', array('route'=> 'page_schedule'));
+        $menu->addChild('Code of Conduct', array('route' => 'page_code_of_conduct'));
         $menu->addChild('Venue', array('route' => 'page_venue'));
 
         $RouteVoter = new RouteVoter();
@@ -50,7 +51,6 @@ class MenuBuilder
             if ($this->isAncestor($currentRequest->getUri(), $menuItem->getUri())) {
                 $menuItem->setCurrent(true);
             }
-
         }
 
         return $menu;
