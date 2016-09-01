@@ -41,6 +41,7 @@
     },
     "scripts": {
         "compile": [
+            "rm web/app_dev.php",
             "bin/console assetic:dump"
         ],
         "post-install-cmd": [
