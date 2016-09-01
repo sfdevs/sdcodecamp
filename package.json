@@ -6,6 +6,9 @@
   "directories": {
     "doc": "doc"
   },
+  "engines": {
+    "node": "^6.3.0"
+  },
   "scripts": {
     "postinstall": "cd app/Resources && if [ ! -h 'node_modules' ]; then ln -s ../../node_modules ./; fi"
   },
@@ -37,7 +40,6 @@
     "node-sass": "^3.3.3"
   },
   "dependencies": {
-    "base64url": "^1.0.5",
     "uglify-js": "*",
     "uglifycss": "*"
   }
