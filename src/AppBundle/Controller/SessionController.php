@@ -32,18 +32,23 @@ class SessionController extends Controller
 
     /**
      * @param $id
+     * @param string $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response
      *
+     * @Route("/{slug},{id}", name="session_show_by_slug")
      * @Route("/{id}", name="session_show")
      */
-    public function showAction($id)
+    public function showAction($id, $slug = '')
     {
         $session = $this->getDoctrine()
             ->getRepository('AppBundle:Session')
             ->find($id);
         if (!$session || !$session->isVisible()) {
             throw $this->createNotFoundException('Unable to find session');
+        }
+        if ($slug === '' || $slug !== $session->getSlug()) {
+            return $this->redirectToRoute('session_show_by_slug', ['id' => $id, 'slug' => $session->getSlug()]);
         }
 
         return $this->render('session/show.html.twig', [

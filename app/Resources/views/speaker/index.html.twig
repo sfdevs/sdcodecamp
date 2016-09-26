@@ -7,14 +7,14 @@
     <h1 class="pagetitle cutout">Speakers</h1>
     {% if speakers %}
     <ul>
-        {% for speaker in speakers %}
+        {% for speaker in speakers %}{% spaceless %}
         <li class="speaker">
-            <a href="{{ path('speaker_show', {id: speaker.id}) }}">
+            <a href="{{ path('speaker_show_by_slug', {id: speaker.id, slug: speaker.slug}) }}">
                 <img class="img-circle" src="http://www.gravatar.com/avatar/{{ speaker.emailMd5 }}?s=150" />
             </a>
-            <a href="{{ path('speaker_show', {id: speaker.id}) }}">{{ speaker.fullName }}</a>
+            <a href="{{ path('speaker_show_by_slug', {id: speaker.id, slug: speaker.slug}) }}">{{ speaker.fullName }}</a>
         </li>
-        {% endfor %}
+        {% endspaceless %}{% endfor %}
     </ul>
     {% else %}
         <p><a class="button" href="{{ path('speaker_submission_new') }}" style="color: white;">Call for Speakers</a></p>

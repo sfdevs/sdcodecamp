@@ -1,5 +1,5 @@
 {% extends "::base.html.twig" %}
-{% set currentUrl = url('speaker_show', {'id': speaker.id}) %}
+{% set currentUrl = url('speaker_show_by_slug', {'id': speaker.id, 'slug': speaker.slug}) %}
 {% block title %}{{ speaker.fullName }} | {{ parent() }}{% endblock %}
 
 {% block body %}

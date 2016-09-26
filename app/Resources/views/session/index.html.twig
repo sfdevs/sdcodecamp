@@ -11,12 +11,14 @@
             {% for session in sessions %}
             <li class="session">
                 <article>
-                    <h3><a href="{{ path('session_show', {id: session.id}) }}">{{ session.title }}</a></h3>
+                    <h3><a href="{{ path('session_show_by_slug', {id: session.id, slug: session.slug}) }}">{{ session.title }}</a></h3>
                     {% if session.speakers %}
                     <p class="attribution">
                         Presented by:
                         {% for speaker in session.speakers %}
-                            <a href="{{ path('speaker_show', {id: speaker.id}) }}">{{ speaker.fullName }}</a>{% if not loop.last %}, {% endif %}
+                        {% if speaker.visible %}
+                            <a href="{{ path('speaker_show_by_slug', {id: speaker.id, slug: speaker.slug}) }}">{{ speaker.fullName }}</a>{% if not loop.last %}, {% endif %}
+                        {% endif %}
                         {% endfor %}
                     </p>
                     {% endif %}
