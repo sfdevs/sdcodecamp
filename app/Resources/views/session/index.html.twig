@@ -12,10 +12,14 @@
             <li class="session">
                 <article>
                     <h3><a href="{{ path('session_show', {id: session.id}) }}">{{ session.title }}</a></h3>
-                    <p class="attribution">Presented by: <a href="{{ path('speaker_show', {id: session.speaker.id}) }}">{{ session.speaker.fullName }}</a></p>
-                    {#<% if session.speaker_deck? %>#}
-                    {#<p class="links">Links: <a id="SpeakerDeckUrl" href="<%= session.speaker_deck %>">Slides</a></p>#}
-                    {#<% end %>#}
+                    {% if session.speakers %}
+                    <p class="attribution">
+                        Presented by:
+                        {% for speaker in session.speakers %}
+                            <a href="{{ path('speaker_show', {id: speaker.id}) }}">{{ speaker.fullName }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
                     <p class="summary">{{ session.abstractMarkdown|raw }}</p>
                 </article>
             </li>
