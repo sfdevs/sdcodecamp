@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ url('homepage') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>{{ url('page_sponsors') }}</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>{{ url('page_venue') }}</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>{{ url('speaker_index') }}</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>{{ url('session_index') }}</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>{{ url('page_code_of_conduct') }}</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% for speaker in speakers %}
+        <url>
+            <loc>{{ url('speaker_show_by_slug', {'id': speaker.id, 'slug': speaker.slug}) }}</loc>
+            <lastmod>{{ speaker.updated|date('c') }}</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    {% endfor %}
+    {% for session in sessions %}
+        <url>
+            <loc>{{ url('session_show_by_slug', {'id': session.id, 'slug': session.slug}) }}</loc>
+            <lastmod>{{ session.updated|date('c') }}</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    {% endfor %}
+</urlset>

@@ -75,6 +75,31 @@ class DefaultController extends SubscriberTypeController
         return $this->render('default/code-of-conduct.html.twig');
     }
 
+     /**
+      * @Route("/sitemap.{_format}", name="page_sitemap",
+      * defaults={"_format": "xml"},
+      *     requirements={
+      *         "_format": "xml",
+      *     }
+      * )
+      *
+      * @return \Symfony\Component\HttpFoundation\Response
+      */
+     public function siteMapAction()
+     {
+         $response = new Response();
+         $response->setEtag(md5('sitemap'));
+         $response->setPublic();
+         $response->setMaxAge(3600);
+         $response->setSharedMaxAge(3600);
+         $sessions = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
+         $speakers = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
+         return $this->render(':default:sitemap.xml.twig', [
+             'sessions' => $sessions,
+             'speakers' => $speakers,
+         ], $response);
+     }
+
     /**
      * @Route("/schedule/", name="page_schedule")
      *
