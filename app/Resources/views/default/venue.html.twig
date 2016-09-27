@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ event_date_iso|date('Y') }} Venue | {{ parent() }}{% endblock %}
+{% block og_title %}{{ event_date_iso|date('Y') }} Venue{% endblock %}
 {% block meta_description %}The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast Technical Institute in Sioux Falls, SD.{% endblock %}
 {% block body %}
     <section class="page-content clearfix">

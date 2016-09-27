@@ -3,6 +3,7 @@
 {% set currentUrl = url('speaker_show_by_slug', {'id': speaker.id, 'slug': speaker.slug}) %}
 
 {% block title %}{{ speaker.fullName }} | {{ parent() }}{% endblock %}
+{% block og_title %}{{ speaker.fullName|e('html_attr') }}{% endblock %}
 
 {% block meta_description %}{{ speaker.bioMarkdown|striptags|e('html_attr') }}{% endblock %}
 

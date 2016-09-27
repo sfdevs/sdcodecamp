@@ -6,7 +6,7 @@
         <title>{% block title %}South Dakota Code Camp{% endblock %}</title>
         <meta name="description" content="{% block meta_description %}South Dakota Code Camp {{ event_date }} - Sioux Falls, SD. This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net User Group.{% endblock %}">
         <meta property="og:image" content="{{ app.request.uriForPath('/bundles/app/images/facebook_website_share.png') }}">
-        <meta property="og:title" content="{{ block('title') }}" />
+        <meta property="og:title" content="{{ block('og_title') ? block('og_title') : block('title') }}" />
         <meta property="og:description" content="{{ block('meta_description') }}" />
         <meta property="og:url" content="{% if currentUrl is defined %}{{ currentUrl }}{% else %}{{ url(app.request.attributes.get('_route')) }}{% endif %}" />
         {% block meta_other %}{% endblock %}
