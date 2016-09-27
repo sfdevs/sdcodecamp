@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ event_date_iso|date('Y') }} Schedule | {{ parent() }}{% endblock %}
+{% block og_title %}{{ event_date_iso|date('Y') }} Schedule{% endblock %}
 {% block meta_description %}South Dakota Code Camp {{ event_date_iso|date('Y') }} Schedule.{% endblock %}
 {% block body %}
     <style>

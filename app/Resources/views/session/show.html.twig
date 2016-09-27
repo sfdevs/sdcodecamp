@@ -3,6 +3,7 @@
 {% set currentUrl = url('session_show_by_slug', {'id': session.id, 'slug': session.slug}) %}
 
 {% block title %}{{ session.title }} | {{ parent() }}{% endblock %}
+{% block og_title %}{{ session.title|e('html_attr') }}{% endblock %}
 
 {% block meta_description %}{{ session.abstractMarkdown|striptags|e('html_attr') }}{% endblock %}
 
