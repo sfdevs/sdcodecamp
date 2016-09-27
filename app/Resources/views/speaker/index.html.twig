@@ -12,7 +12,7 @@
         {% for speaker in speakers %}{% spaceless %}
         <li class="speaker">
             <a href="{{ path('speaker_show_by_slug', {id: speaker.id, slug: speaker.slug}) }}">
-                <img class="img-circle" src="http://www.gravatar.com/avatar/{{ speaker.emailMd5 }}?s=150" />
+                <img class="img-circle" src="//www.gravatar.com/avatar/{{ speaker.emailMd5 }}?s=150" />
             </a>
             <a href="{{ path('speaker_show_by_slug', {id: speaker.id, slug: speaker.slug}) }}">{{ speaker.fullName }}</a>
         </li>

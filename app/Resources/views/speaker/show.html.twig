@@ -1,6 +1,17 @@
 {% extends "::base.html.twig" %}
+
 {% set currentUrl = url('speaker_show_by_slug', {'id': speaker.id, 'slug': speaker.slug}) %}
+
 {% block title %}{{ speaker.fullName }} | {{ parent() }}{% endblock %}
+
+{% block twitter_card %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@sdcodecamp" />
+    <meta name="twitter:title" content="Meet {{ speaker.fullName|e('html_attr') }}" />
+    <meta name="twitter:description" content="{{ speaker.bioMarkdown|striptags|e('html_attr') }}" />
+    <meta name="twitter:image" content="//www.gravatar.com/avatar/{{ speaker.emailMd5 }}?s=150" />
+    <meta name="twitter:image:alt" content="{{ speaker.fullName|e('html_attr') }} portrait" />
+{% endblock %}
 
 {% block body %}
     <section class="speaker-show interior-content clearfix">

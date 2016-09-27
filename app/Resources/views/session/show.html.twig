@@ -1,6 +1,15 @@
 {% extends "::base.html.twig" %}
+
 {% set currentUrl = url('session_show_by_slug', {'id': session.id, 'slug': session.slug}) %}
+
 {% block title %}{{ session.title }} | {{ parent() }}{% endblock %}
+
+{% block twitter_card %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@sdcodecamp" />
+    <meta name="twitter:title" content="{ session.title }}" />
+    <meta name="twitter:description" content="{{ session.abstractMarkdown|striptags|e('html_attr') }}" />
+{% endblock %}
 
 {% block body %}
     <section class="session-show interior-content clearfix">
