@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}{{ event_date_iso|date('Y') }} Sponsors | {{ parent() }}{% endblock %}
+
 {% block meta_description %}South Dakota Code Camp would not be possible without our sponsors. Learn more about our sponsors.{% endblock %}
+
 {% block body %}
     <style>
         .sponsor-section:last-child {border-bottom: none;}
