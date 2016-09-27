@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
-{% block title %}2015 Schedule | {{ parent() }}{% endblock %}
-{% block meta_description %}South Dakota Code Camp 2015 Schedule.{% endblock %}
+{% block title %}{{ event_date_iso|date('Y') }} Schedule | {{ parent() }}{% endblock %}
+{% block meta_description %}South Dakota Code Camp {{ event_date_iso|date('Y') }} Schedule.{% endblock %}
 {% block body %}
     <style>
         .table {
@@ -216,9 +216,9 @@
         }
     </style>
     <section class="page-content clearfix sponsor-index ">
-        <h1>2015 South Dakota Code Camp Schedule</h1>
+        <h1>{{ event_date_iso|date('Y') }} South Dakota Code Camp Schedule</h1>
         <h2>
-            Saturday, 11/7
+            Saturday, {{ event_date_iso|date('m/j') }}
         </h2>
         <table border="1" align="center" class="table table-hover table-responsive">
             <thead align="center">
