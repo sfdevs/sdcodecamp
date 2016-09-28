@@ -70,7 +70,20 @@
         "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_url": "DATABASE_URL",
+                "monolog_action_level": "LOG_LEVEL",
+                "database.driver": "SYMFONY_DATABASE_DRIVER",
+                "database.host": "SYMFONY_DATABASE_HOST",
+                "database.port": "SYMFONY_DATABASE_PORT",
+                "database.name": "SYMFONY_DATABASE_NAME",
+                "database.user": "SYMFONY_DATABASE_USER",
+                "database.password": "SYMFONY_DATABASE_PASSWORD",
+                "secret": "SYMFONY_SECRET",
+                "mapbox_project_id": "MAPBOX_PROJECT_ID",
+                "mapbox_access_token": "MAPBOX_ACCESS_TOKEN"
+            }
         }
     }
 }

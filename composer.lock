@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "16cfa73d6662cff599aba7a1095145f3",
-    "content-hash": "f8d69a7e13b18ae13ce018de7964993e",
+    "hash": "82a79768ea703a0c2b26f56703a7e5e1",
+    "content-hash": "bf4c0ed0fca8054972909ccdbb07003b",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -845,12 +845,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "7abb0ff366c404f2c2b34fd264693071148351a2"
+                "reference": "9f86fe2d69df11159fca9ec44b529cb1df5e14aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/7abb0ff366c404f2c2b34fd264693071148351a2",
-                "reference": "7abb0ff366c404f2c2b34fd264693071148351a2",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/9f86fe2d69df11159fca9ec44b529cb1df5e14aa",
+                "reference": "9f86fe2d69df11159fca9ec44b529cb1df5e14aa",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +912,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-09-26 07:23:44"
+            "time": "2016-09-28 09:10:06"
         },
         {
             "name": "incenteev/composer-parameter-handler",
