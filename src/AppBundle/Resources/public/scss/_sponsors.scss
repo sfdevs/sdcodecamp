@@ -2,12 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.sponsor-section {
+    &:last-child {
+        border-bottom: none;
+    }
+    img {
+        border: 1px solid #888;
+    }
+    h2 {
+        border-bottom: 1px solid #888;
+        margin-bottom: .5em;
+        margin-top: 1em;
+        text-shadow: none;
+    }
+    h3 {
+        text-shadow: none;
+    }
+    .sponsor {
+        display: inline-block;
+        width: 100%;
+        img {
+            max-height: 100%;
+        }
+    }
+}
+
 // Uncomment any media queries you might need
 // @media only screen and (min-width: 30em) {
 // }
 
-// @media only screen and (min-width: 48em) {
-// }
+@media only screen and (min-width: 48em) {
+    .sponsor-section.gold .sponsor {
+        max-width: 50%;
+        vertical-align: top;
+        .logo {
+            height: 210px;
+        }
+    }
+    .sponsor-section.silver .sponsor {
+        max-width: 30%;
+        .logo {
+            height: 110px;
+        }
+    }
+}
 
 // @media only screen and (min-width: 64em) {
 // }
