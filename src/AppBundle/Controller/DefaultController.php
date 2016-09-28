@@ -52,7 +52,10 @@ class DefaultController extends SubscriberTypeController
      */
     public function venueAction()
     {
-        return $this->render('default/venue.html.twig');
+        return $this->render('default/venue.html.twig', [
+            'mapbox_project_id' => $this->getParameter('mapbox_project_id'),
+            'mapbox_access_token' => $this->getParameter('mapbox_access_token'),
+        ]);
     }
 
     /**

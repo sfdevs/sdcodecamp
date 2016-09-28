@@ -2,6 +2,24 @@
 {% block title %}{{ event_date_iso|date('Y') }} Venue | {{ parent() }}{% endblock %}
 {% block og_title %}{{ event_date_iso|date('Y') }} Venue{% endblock %}
 {% block meta_description %}The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast Technical Institute in Sioux Falls, SD.{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    <script src="//unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    {{ parent() }}
+    <script>
+        var mymap = L.map('CampusMap').setView([43.569381,-96.7805735], 15);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 20,
+            id: '{{ mapbox_project_id }}',
+            accessToken: '{{ mapbox_access_token }}'
+        }).addTo(mymap);
+        var marker = L.marker([43.5693022,-96.7804116]).addTo(mymap);
+    </script>
+{% endblock %}
 {% block body %}
     <section class="page-content clearfix">
         <h1>Venue</h1>
@@ -11,10 +29,7 @@
             Technical Institute in the Sullivan Health Science Center. <a href="https://goo.gl/maps/anemCHNvdkv">Click here for directions.</a>
         </p>
 
-        <div class="campus-map">
-            <a href="https://goo.gl/maps/anemCHNvdkv">
-                <img src="http://www.southeasttech.edu/media/sti360webcmscom/photos/Buildings/16-CampusMap-695px.png" style="max-width:100%;" />
-            </a>
-        </div>
+        <div id="CampusMap" style="height: 400px;"></div>
+
     </section>
 {% endblock %}
