@@ -2,14 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.sponsor-section {
-    &:last-child {
-        border-bottom: none;
-    }
-    img {
-        border: 1px solid #888;
-    }
+.sponsor-index {
     h2 {
         border-bottom: 1px solid #888;
         margin-bottom: .5em;
@@ -18,6 +11,15 @@
     }
     h3 {
         text-shadow: none;
+    }
+}
+
+.sponsor-section {
+    &:last-child {
+        border-bottom: none;
+    }
+    img {
+        border: 1px solid #888;
     }
     .sponsor {
         display: inline-block;
@@ -33,8 +35,12 @@
 // }
 
 @media only screen and (min-width: 48em) {
+    .sponsor-section {
+        display: flex;
+        justify-content: space-between;
+    }
     .sponsor-section.gold .sponsor {
-        max-width: 50%;
+        max-width: 45%;
         vertical-align: top;
         .logo {
             height: 210px;
