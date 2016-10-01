@@ -23,7 +23,7 @@ class SessionController extends Controller
     {
         $sessions = $this->getDoctrine()
             ->getRepository('AppBundle:Session')
-            ->findBy(['visible' => true]);
+            ->findBy(['visible' => true], ['title' => 'ASC']);
 
         return $this->render('session/index.html.twig', [
             'sessions' => $sessions,

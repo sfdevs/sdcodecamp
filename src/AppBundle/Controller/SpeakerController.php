@@ -21,7 +21,7 @@ class SpeakerController extends Controller
     {
         $speakers = $this->getDoctrine()
             ->getRepository('AppBundle:Speaker')
-            ->findBy(['visible' => true]);
+            ->findBy(['visible' => true], ['firstName' => 'ASC']);
 
         return $this->render('speaker/index.html.twig', [
             'speakers' => $speakers,
