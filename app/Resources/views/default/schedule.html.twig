@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ event_date_iso|date('Y') }} Schedule | {{ parent() }}{% endblock %}
 {% block og_title %}{{ event_date_iso|date('Y') }} Schedule{% endblock %}
-{% block meta_description %}South Dakota Code Camp {{ event_date_iso|date('Y') }} Schedule.{% endblock %}
+{% block meta_description %}{{ event_date_iso|date('Y') }} South Dakota Code Camp Schedule. Check back for updates.{% endblock %}
 {% block body %}
     <style>
         .table {
@@ -221,7 +221,8 @@
         <h2>
             Saturday, {{ event_date_iso|date('m/j') }}
         </h2>
-        <table border="1" align="center" class="table table-hover table-responsive">
+        <p>Coming soon...</p>
+        {#<table border="1" align="center" class="table table-hover table-responsive">
             <thead align="center">
                 <tr>
                     <th>
@@ -391,6 +392,6 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>#}
     </section>
 {% endblock %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>An Error Occurred: {{ status_text }}</title>
+    <title>Resource Gone {{ status_code }}</title>
     <meta content="South Dakota Code Camp {{ event_date }} - Sioux Falls, SD. This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net User Group." name="description" />
 
     <meta property="og:image" content="{{ app.request.baseUrl()~('bundles/app/images/facebook_website_share.png') }}">
@@ -26,9 +26,9 @@
 <body>
     {% include 'includes/error_header.html.twig' %}
     <section class="error-content clearfix">
-        <h1>Access Denied</h1>
-
-        <p>The server returned a "{{ status_code }} {{ status_text }}".</p>
+        <h1>Resource Removed</h1>
+        <p>{{ status_text }}.</p>
     </section>
+    {% include 'includes/footer.html.twig' %}
 </body>
 </html>

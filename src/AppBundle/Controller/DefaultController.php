@@ -110,8 +110,6 @@ class DefaultController extends SubscriberTypeController
      */
     public function scheduleAction()
     {
-        throw new GoneHttpException('The schedule is not currently available');
-
         return $this->render('default/schedule.html.twig');
     }
 }

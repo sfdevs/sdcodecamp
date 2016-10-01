@@ -25,6 +25,10 @@
         <loc>{{ url('page_code_of_conduct') }}</loc>
         <changefreq>weekly</changefreq>
     </url>
+    <url>
+        <loc>{{ url('page_schedule') }}</loc>
+        <changefreq>daily</changefreq>
+    </url>
     {% for speaker in speakers %}
         <url>
             <loc>{{ url('speaker_show_by_slug', {'id': speaker.id, 'slug': speaker.slug}) }}</loc>

@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\GoneHttpException;
 
 /**
  * Class SpeakerSubmissionController
@@ -26,6 +27,7 @@ class SpeakerSubmissionController extends Controller
      */
     public function createAction(Request $request)
     {
+        throw new GoneHttpException('The call for speakers has ended');
         $submission = new SpeakerSubmission();
         $form = $this->createCreateForm($submission);
         $form->handleRequest($request);
@@ -63,6 +65,7 @@ class SpeakerSubmissionController extends Controller
      */
     public function newAction()
     {
+        throw new GoneHttpException('The call for speakers has ended');
         $submission = new SpeakerSubmission();
         $form = $this->createCreateForm($submission);
         return $this->render("speaker_submission/new.html.twig", array(
