@@ -24,14 +24,14 @@
 
         <div class="details">
             <div class="bio">
-                <h6>Bio:</h6>
+                <h2>Bio:</h2>
                 {% if speaker.bioMarkdown %}
                     {{ speaker.bioMarkdown|raw }}
                 {% else %}
                 <p>Bio coming soon...
                 {% endif %}
             </div>
-            <div class="social">
+            <div class="social clearfix">
                 {% if speaker.twitter %}
                 <p>Twitter: <a href="http://twitter.com/{{ speaker.twitter }}">{{ speaker.twitter }}</a>
                 {% endif %}
@@ -43,6 +43,26 @@
                 {% endif %}
             </div>
         </div>
+
+        {% if speaker.sessions|length %}
+            <div class="speaker-sessions clearfix">
+                <h2>Session(s):</h2>
+                <ul class="list-unstyled">
+                {% for session in speaker.sessions %}
+                    {% if session.visible %}
+                    <li>
+                        <div>
+                            <h3><a href="{{ path('session_show_by_slug', {'id': session.id, 'slug': session.slug}) }}">{{ session.title }}</a></h3>
+                            <div>
+                                {{ session.abstractMarkdown|raw }}
+                            </div>
+                        </div>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
 
     </section>
 {% endblock %}
