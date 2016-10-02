@@ -3,3 +3,6 @@
 
 User-agent: *
 Disallow:
+
+
+Sitemap: http://www.southdakotacodecamp.com/sitemap.xml
