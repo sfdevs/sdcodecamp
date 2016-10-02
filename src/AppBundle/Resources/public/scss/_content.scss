@@ -119,6 +119,11 @@ h4.cutout {
     margin-bottom: 1em;
 }
 
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
 .updates {
     background: $sdccLighterGrey;
     margin: 0 auto;
