@@ -4,6 +4,16 @@ window.onload = (function() {
     }
 })();
 
+$('.has-child-menu > a').on('click', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    if (document.body.clientWidth < 768) {
+        $this.siblings('nav').toggleClass('showing');
+    } else {
+        $this.siblings('nav').removeClass('showing')
+    }
+});
+
 var sdcc = {
     openedHeight: '',
     menuOpen: true,
@@ -35,7 +45,7 @@ var sdcc = {
             body.removeAClass('menu-open');
         } else {
             body.className += ' menu-open';
-            this.mainMenu.style.height = this.openedHeight;
+            this.mainMenu.style.height = 'auto';
             this.menuOpen = true;
         }
     }

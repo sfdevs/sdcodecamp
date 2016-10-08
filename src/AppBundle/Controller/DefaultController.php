@@ -59,6 +59,16 @@ class DefaultController extends SubscriberTypeController
     }
 
     /**
+     * @Route("/schedule/family/", name="page_family")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function familyInfoAction()
+    {
+        return $this->render('default/family.html.twig');
+    }
+
+    /**
      * @Route("/sponsors/", name="page_sponsors")
      *
      * @return \Symfony\Component\HttpFoundation\Response

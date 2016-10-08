@@ -4,6 +4,9 @@ header.main {
     background-color: white;
 }
 
+h1 .date {
+    display: none;
+}
 .title {
     color: $textColor;
     position: relative;
@@ -32,6 +35,10 @@ header.main {
     header.main {
         text-align: left;
         padding-left: 1em;
+    }
+
+    h1 .date {
+        display: inline;
     }
 }
 
