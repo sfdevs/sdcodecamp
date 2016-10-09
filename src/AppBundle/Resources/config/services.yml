@@ -23,3 +23,15 @@ services:
         arguments: ["@request_stack"]
         tags:
             - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
+
+    # Summary
+    app.summary.summarizer:
+        class: AppBundle\Summary\Summarizer
+
+    # Twig
+    app.twig.app_extension:
+        class: AppBundle\Twig\AppExtension
+        arguments:
+            - "@app.summary.summarizer"
+        tags:
+            - { name: twig.extension }

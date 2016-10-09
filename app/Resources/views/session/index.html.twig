@@ -25,7 +25,11 @@
                         {% endfor %}
                     </p>
                     {% endif %}
-                    <p class="summary">{{ session.abstractMarkdown|raw }}</p>
+                    <p class="summary">
+                        {{ session.abstractMarkdown|raw|summarize }}<br>
+                        <a href="{{ path('session_show_by_slug', {id: session.id, slug: session.slug}) }}">Read More</a>
+                    </p>
+
                 </article>
             </li>
             {% endfor %}

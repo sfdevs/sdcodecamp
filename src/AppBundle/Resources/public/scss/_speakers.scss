@@ -43,6 +43,17 @@
     }
 }
 
+.speaker-sessions {
+    > ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .session-list-item {
+        margin-bottom: 1em;
+    }
+}
+
 @media only screen and (min-width: 30em) {
     .speaker-index {
         ul {
