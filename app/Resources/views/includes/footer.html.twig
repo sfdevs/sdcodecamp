@@ -1,9 +1,15 @@
 <footer class="main">
-    <a href="https://twitter.com/sdcodecamp" class="twitter-follow-button" data-show-count="false" data-lang="en" data-align="right">Follow @sdcodecamp</a>
-    <a class="g-plus-link" href="https://plus.google.com/117784575670240245598" rel="publisher">Google+</a>
-    <a href="{{ path('homepage') }}">
-        <div class="title">
-            South Dakota Code Camp
-        </div>
-    </a>
+    <div class="top">
+        <a href="https://twitter.com/sdcodecamp" class="twitter-follow-button" data-show-count="false" data-lang="en" data-align="right">Follow @sdcodecamp</a>
+        <a class="g-plus-link" href="https://plus.google.com/117784575670240245598" rel="publisher">Google+</a>
+        <a href="{{ path('homepage') }}">
+            <div class="title">
+                South Dakota Code Camp
+            </div>
+        </a>
+    </div>
+    <div class="bottom">
+        <p class="right">Website created and maintained by the <a href="https://github.com/sfdevs/sdcodecamp/graphs/contributors" target="_blank">SF Devs Community</a>.</p>
+        <p class="left">All Rights Reserved. Copyright {{ date()|date('Y') }} South Dakota Code Camp</p>
+    </div>
 </footer>

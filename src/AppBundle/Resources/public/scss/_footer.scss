@@ -1,11 +1,28 @@
 @import "variables";
 @import "mixins";
+
 footer.main {
     padding: 1em;
     background: white;
     .g-plus-link {
         float: right;
         padding: 1em 0;
+    }
+    .top {
+        margin-bottom: 1em;
+    }
+    .bottom {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    footer.main {
+        .bottom {
+            .right {
+                float: right;
+            }
+        }
     }
 }
 
