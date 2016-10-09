@@ -23,12 +23,9 @@ class DefaultController extends SubscriberTypeController
      */
     public function indexAction(Request $request)
     {
-        // start building the response
-        $response = new Response();
+        $response = $this->createCachedResponse();
         $response->setEtag(md5('home'));
-        $response->setPublic(); // make sure the response is public/cacheable
-        $response->setMaxAge(3600);
-        $response->setSharedMaxAge(3600);
+
 
         // Check that the Response is not modified for the given Request
         if ($response->isNotModified($request)) {
@@ -52,10 +49,12 @@ class DefaultController extends SubscriberTypeController
      */
     public function venueAction()
     {
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('venue'));
         return $this->render('default/venue.html.twig', [
             'mapbox_project_id' => $this->getParameter('mapbox_project_id'),
             'mapbox_access_token' => $this->getParameter('mapbox_access_token'),
-        ]);
+        ], $response);
     }
 
     /**
@@ -65,7 +64,9 @@ class DefaultController extends SubscriberTypeController
      */
     public function familyInfoAction()
     {
-        return $this->render('default/family.html.twig');
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('family_info'));
+        return $this->render('default/family.html.twig', [], $response);
     }
 
     /**
@@ -75,7 +76,9 @@ class DefaultController extends SubscriberTypeController
      */
     public function sponsorAction()
     {
-        return $this->render('default/sponsor.html.twig');
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('sponsor'));
+        return $this->render('default/sponsor.html.twig', [], $response);
     }
 
     /**
@@ -85,7 +88,9 @@ class DefaultController extends SubscriberTypeController
      */
     public function codeOfConductAction()
     {
-        return $this->render('default/code-of-conduct.html.twig');
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('code_of_conduct'));
+        return $this->render('default/code-of-conduct.html.twig', [], $response);
     }
 
      /**
@@ -100,11 +105,8 @@ class DefaultController extends SubscriberTypeController
       */
      public function siteMapAction()
      {
-         $response = new Response();
+         $response = $this->createCachedResponse();
          $response->setEtag(md5('sitemap'));
-         $response->setPublic();
-         $response->setMaxAge(3600);
-         $response->setSharedMaxAge(3600);
          $sessions = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
          $speakers = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
          return $this->render(':default:sitemap.xml.twig', [
@@ -121,5 +123,16 @@ class DefaultController extends SubscriberTypeController
     public function scheduleAction()
     {
         return $this->render('default/schedule.html.twig');
+    }
+
+    private function createCachedResponse(Response $response = null)
+    {
+        if ($response === null) {
+            $response = new Response();
+        }
+        $response->setPublic(); // make sure the response is public/cacheable
+        $response->setMaxAge(3600);
+        $response->setSharedMaxAge(3600);
+        return $response;
     }
 }
