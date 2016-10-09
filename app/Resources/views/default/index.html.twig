@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
+{% set description = 'South Dakota Code Camp is a free local software development conference hosted by the local Sioux Falls Developers Group.' %}
 {% block title %}{{ parent() }} &bull; {{ event_date }}{% endblock %}
+{% block meta_description %}{{ description }}{% endblock %}
 {% block meta_other %}
     <meta property="og:type" content="website" />
-
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Event",
         "name": "South Dakota Code Camp",
         "startDate" : "{{ event_date_iso }}",
+        "description" : "{{ description }}",
         "url" : "{{ url(app.request.attributes.get('_route')) }}",
         "location" : {
             "@type" : "Place",
@@ -64,8 +66,4 @@
     </section>
 {% endblock %}
 
-{% block body_extra %}
-    {% spaceless %}
-        class="home"
-    {% endspaceless %}
-{% endblock %}
+{% block body_extra %}class="home"{% endblock %}
