@@ -38,6 +38,7 @@ twig:
     globals:
         event_date: "November 5, 2016"
         event_date_iso: "2016-11-05"
+        bing_auth_id: "%bing_site_auth%"
 
 # Assetic Configuration
 assetic:

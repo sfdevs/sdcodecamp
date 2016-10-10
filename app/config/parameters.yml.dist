@@ -18,3 +18,6 @@ parameters:
     mapbox_project_id: ~
     mapbox_access_token: ~
     monolog_action_level: debug
+
+    bing_site_auth: ~
+    ga_site_auth: ~
