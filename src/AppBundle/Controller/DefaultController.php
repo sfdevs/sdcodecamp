@@ -93,6 +93,18 @@ class DefaultController extends SubscriberTypeController
         return $this->render('default/code-of-conduct.html.twig', [], $response);
     }
 
+    /**
+     * @Route("/about-us/", name="page_about_us")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function aboutUsAction()
+    {
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('about_us'));
+        return $this->render('default/about-us.html.twig', [], $response);
+    }
+
      /**
       * @Route("/sitemap.{_format}", name="page_sitemap",
       * defaults={"_format": "xml"},

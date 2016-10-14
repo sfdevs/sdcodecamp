@@ -22,6 +22,7 @@ nav.main {
                 margin-left: 1em;
             }
             a {
+                width: 100%;
                 &:before {
                     content: '> ';
                 }

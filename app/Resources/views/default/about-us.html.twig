@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Code of Conduct | {{ parent() }}{% endblock %}
+{% block og_title %}Code of Conduct{% endblock %}
+
+{% block meta_description %}South Dakota Code Camp is dedicated to a harassment-free conference experience for everyone.{% endblock %}
+
+{% block body %}
+    <section class="page-content clearfix">
+        <h1 class="pagetitle cutout">About Us</h1>
+        <p>South Dakota Code Camp is The Mount Rushmore State's largest developer conference. We are an annual event
+            held in Sioux Falls, SD. The event is completely free, covered entirely by our gracious sponsors.</p>
+
+        <p>South Dakota Code Camp follows the guidelines published in the <a
+                    href="https://blogs.msdn.microsoft.com/trobbins/2004/12/12/the-code-camp-manifesto/"
+                    target="_blank">Code Camp manifesto</a>. We expect our attendees to adhere to our <a
+                    href="{{ path('page_code_of_conduct') }}">code of conduct policy</a>.</p>
+
+        <p>As this is a community-driven event, we are always looking for people to lead sessions, volunteer to help
+            during the day of the event, etc. If you'd like to participate, or if you'd like to contribute to the event,
+            let us know.</p>
+
+        <h2 class="cutout pagetitle">Meet the team</h2>
+        <ul class="team-member-list">
+            <li class="team-member clearfix">
+                <div class="team-bio">
+                    <h3>Seth Larson</h3>
+                    <p>Seth is a software engineer in Sioux Falls, SD. He has spent the last decade working in
+                        various technical roles and is one of the organizers of the <a
+                                hrefs="https://www.meetup.com/sfdevs/" target="_blank">Sioux Falls Developers Group.</a>
+                    </p>
+                </div>
+                <div class="team-img">
+                    <img class="img-circle" src="//www.gravatar.com/avatar/cd6b89674c17f2eab7fd5c76b16d0a7f?s=150"/>
+                </div>
+            </li>
+            <li class="team-member clearfix">
+                <div class="team-bio">
+                    <h3>Tyler Harms</h3>
+                    <p>Tyler web developer, father, and husband from the Sioux Falls.</p>
+                </div>
+                <div class="team-img">
+                    <img class="img-circle" src="//www.gravatar.com/avatar/35e0e2c8fbddd6df9ea5a98718671c48?s=150"/>
+                </div>
+            </li>
+            <li class="team-member clearfix">
+                <div class="team-bio">
+                    <h3>Dani Ames</h3>
+                    <p>Dani is a web developer, born and raised in the glorious corn filled plains of South Dakota.</p>
+                </div>
+                <div class="team-img">
+                    <img class="img-circle" src="//www.gravatar.com/avatar/cd4df890c87aa59ba72a478da121989f?s=150"/>
+                </div>
+            </li>
+            <li class="team-member clearfix">
+                <div class="team-bio">
+                    <h3>Kwen Peterson</h3>
+                    <p>Kwen is a senior software developer at Raven Industries. He has spent the past 12 years working
+                        primarily in the .NET space in the Sioux Falls area and is a co-organizer of the local Sioux
+                        Falls Developers Group.</p>
+                </div>
+                <div class="team-img">
+                    <img class="img-circle" src="//www.gravatar.com/avatar/a4217f2354e6ec521f32237458f8c585?s=150"/>
+                </div>
+            </li>
+        </ul>
+    </section>
+{% endblock %}

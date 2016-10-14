@@ -3,6 +3,7 @@
     margin-bottom: 1em;
     padding: .25em 0 .125em 0;
 }
+
 .hero {
     padding: 2em 0;
     color: white;
@@ -33,7 +34,7 @@
         font-style: italic;
     }
     .button {
-        @include horizontal($sdccLightGreen,$sdccBlue);
+        @include horizontal($sdccLightGreen, $sdccBlue);
         font-size: .5em;
         text-decoration: none;
     }
@@ -102,7 +103,7 @@
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
-    background: -webkit-linear-gradient(left, #68dcc0 30%,#8c93de 57%,#f9a57f 79%);
+    background: -webkit-linear-gradient(left, #68dcc0 30%, #8c93de 57%, #f9a57f 79%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
@@ -124,13 +125,26 @@ h4.cutout {
     list-style: none;
 }
 
+.team-member-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.team-member {
+    margin-bottom: 2em;
+}
+
+.team-img {
+    display: none;
+}
+
 .updates {
     background: $sdccLighterGrey;
     margin: 0 auto;
     padding: 1em;
     text-align: center;
 }
-
 
 .tweet-container {
     margin-left: auto;
@@ -148,7 +162,7 @@ h4.cutout {
         margin: 0 5px 5px 0;
     }
 
-    &>a {
+    & > a {
         display: block;
         text-transform: uppercase;
 
@@ -173,6 +187,7 @@ h4.cutout {
         color: $sdccLightGreen;
     }
 }
+
 .twitter-follow-button {
     float: right;
     margin: 1em 0 1em 1em;
@@ -237,6 +252,19 @@ h4.cutout {
     h4.cutout {
         letter-spacing: .2em;
     }
+
+    .team-img {
+        float: left;
+        width: 40%;
+    }
+
+    .team-bio {
+        float: right;
+        width: 60%;
+    }
+    .team-img {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 48em) {
@@ -262,7 +290,7 @@ h4.cutout {
     .main-content,
     .error-content,
     .interior-content,
-    .page-content{
+    .page-content {
         p {
             font-size: 1.25em;
         }
@@ -296,6 +324,18 @@ h4.cutout {
         display: inline-block;
         max-width: 49%
     }
+
+    .team-img {
+        width: 30%;
+    }
+
+    .team-bio {
+        font-size: 16px;
+        width: 70%;
+    }
+    .team-member-list {
+        margin: 0 1em;
+    }
 }
 
 @media only screen and (min-width: 64em) {
@@ -306,7 +346,7 @@ h4.cutout {
     }
     .error-content,
     .interior-content,
-    .page-content{
+    .page-content {
         @include css3-calc('padding-left', '50% - 30em');
         @include css3-calc('padding-right', '50% - 30em');
     }
@@ -314,5 +354,8 @@ h4.cutout {
     .updates {
         @include css3-calc('padding-left', '50% - 27em');
         @include css3-calc('padding-right', '50% - 27em');
+    }
+    .team-member-list {
+        margin: 0 4em;
     }
 }

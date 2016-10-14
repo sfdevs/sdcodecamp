@@ -52,6 +52,7 @@ class MenuBuilder
         $menu->addChild('Sponsors', array('route' => 'page_sponsors'));
 
         $menu->addChild('Information', array('uri' => '#'));
+        $menu['Information']->addChild('About Us', array('route' => 'page_about_us'));
         $menu['Information']->addChild('Code of Conduct', array('route' => 'page_code_of_conduct'));
         $menu['Information']->addChild('Venue', array('route' => 'page_venue'));
         $menu['Information']->setAttributes([
