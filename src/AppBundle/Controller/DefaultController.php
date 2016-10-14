@@ -23,17 +23,12 @@ class DefaultController extends SubscriberTypeController
      */
     public function indexAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('home'));
+        $response = $this->render('default/index.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
 
-
-        // Check that the Response is not modified for the given Request
-        if ($response->isNotModified($request)) {
-            // return the 304 Response immediately
-            return $response;
-        }
-
-        return $this->render('default/index.html.twig', [], $response);
+        return $response;
     }
 
     /**
@@ -47,14 +42,17 @@ class DefaultController extends SubscriberTypeController
     /**
      * @Route("/venue/", name="page_venue")
      */
-    public function venueAction()
+    public function venueAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('venue'));
-        return $this->render('default/venue.html.twig', [
+        $response = $this->render('default/venue.html.twig', [
             'mapbox_project_id' => $this->getParameter('mapbox_project_id'),
             'mapbox_access_token' => $this->getParameter('mapbox_access_token'),
-        ], $response);
+        ]);
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
     }
 
     /**
@@ -62,11 +60,14 @@ class DefaultController extends SubscriberTypeController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function familyInfoAction()
+    public function familyInfoAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('family_info'));
-        return $this->render('default/family.html.twig', [], $response);
+        $response = $this->render('default/family.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
     }
 
     /**
@@ -74,11 +75,14 @@ class DefaultController extends SubscriberTypeController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function sponsorAction()
+    public function sponsorAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('sponsor'));
-        return $this->render('default/sponsor.html.twig', [], $response);
+        $response = $this->render('default/sponsor.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
     }
 
     /**
@@ -86,11 +90,14 @@ class DefaultController extends SubscriberTypeController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function codeOfConductAction()
+    public function codeOfConductAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('code_of_conduct'));
-        return $this->render('default/code-of-conduct.html.twig', [], $response);
+        $response = $this->render('default/code-of-conduct.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
     }
 
     /**
@@ -98,43 +105,51 @@ class DefaultController extends SubscriberTypeController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function aboutUsAction()
+    public function aboutUsAction(Request $request)
     {
-        $response = $this->createCachedResponse();
-        $response->setEtag(md5('about_us'));
-        return $this->render('default/about-us.html.twig', [], $response);
+        $response = $this->render('default/about-us.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+
+        return $response;
     }
 
-     /**
-      * @Route("/sitemap.{_format}", name="page_sitemap",
-      * defaults={"_format": "xml"},
-      *     requirements={
-      *         "_format": "xml",
-      *     }
-      * )
-      *
-      * @return \Symfony\Component\HttpFoundation\Response
-      */
-     public function siteMapAction()
-     {
-         $response = $this->createCachedResponse();
-         $response->setEtag(md5('sitemap'));
-         $sessions = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
-         $speakers = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
-         return $this->render(':default:sitemap.xml.twig', [
-             'sessions' => $sessions,
-             'speakers' => $speakers,
-         ], $response);
-     }
+    /**
+     * @Route("/sitemap.{_format}", name="page_sitemap",
+     * defaults={"_format": "xml"},
+     *     requirements={
+     *         "_format": "xml",
+     *     }
+     * )
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function siteMapAction()
+    {
+        $response = $this->createCachedResponse();
+        $response->setEtag(md5('sitemap'));
+        $sessions = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
+        $speakers = $this->getDoctrine()->getRepository('AppBundle:Session')->findBy(['visible' => true]);
+
+        return $this->render(':default:sitemap.xml.twig', [
+            'sessions' => $sessions,
+            'speakers' => $speakers,
+        ], $response);
+    }
 
     /**
      * @Route("/schedule/", name="page_schedule")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function scheduleAction()
+    public function scheduleAction(Request $request)
     {
-        return $this->render('default/schedule.html.twig');
+        $response = $this->render('default/schedule.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
     }
 
     private function createCachedResponse(Response $response = null)
@@ -145,6 +160,7 @@ class DefaultController extends SubscriberTypeController
         $response->setPublic(); // make sure the response is public/cacheable
         $response->setMaxAge(3600);
         $response->setSharedMaxAge(3600);
+
         return $response;
     }
 }
