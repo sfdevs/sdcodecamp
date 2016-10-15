@@ -137,6 +137,9 @@ h4.cutout {
 
 .team-img {
     display: none;
+    img {
+        max-width: 150px;
+    }
 }
 
 .updates {
