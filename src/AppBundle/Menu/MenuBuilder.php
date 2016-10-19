@@ -55,6 +55,7 @@ class MenuBuilder
         $menu['Information']->addChild('About Us', array('route' => 'page_about_us'));
         $menu['Information']->addChild('Code of Conduct', array('route' => 'page_code_of_conduct'));
         $menu['Information']->addChild('Venue', array('route' => 'page_venue'));
+        $menu['Information']->addChild('OpenSpace', array('route' => 'page_open_space'));
         $menu['Information']->setAttributes([
             'class' => 'has-child-menu'
         ]);

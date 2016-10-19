@@ -58,6 +58,13 @@ $buttonColor: $white;
 $buttonPadding: .25em .75em;
 
 // Tables
+$table-cell-padding:            8px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #ddd !default;
 $tableBackground: transparent;
 $tableStripe: $sdccLighterGrey;
 $tableFontSize: .875em;
@@ -66,3 +73,7 @@ $tableBorderWidth: 1px;
 $tableBorderStyle: solid;
 //$tableBorderColor: $sqLightGrey;
 //$tableHover: transparent;
+
+// Bootstrap vars
+$text-muted:                  $sdccLightGrey !default;
+$body-bg: #fff;

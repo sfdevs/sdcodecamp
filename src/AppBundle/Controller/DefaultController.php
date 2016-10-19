@@ -152,6 +152,21 @@ class DefaultController extends SubscriberTypeController
         return $response;
     }
 
+    /**
+     * @Route("/open-spaces/", name="page_open_space")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function openSpaceAction(Request $request)
+    {
+        $response = $this->render('default/open-spaces.html.twig');
+        $response->setEtag(md5($response->getContent()));
+        $response = $this->createCachedResponse($response);
+        $response->isNotModified($request);
+
+        return $response;
+    }
+
     private function createCachedResponse(Response $response = null)
     {
         if ($response === null) {
