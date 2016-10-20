@@ -41,7 +41,8 @@ class MenuBuilder
 
         $menu->addChild('Speakers', array('route' => 'speaker_index'));
 
-        $menu->addChild('Schedule', array('uri' => '#', 'class' => 'has-child-munu'));
+        $menu->addChild('Schedule', array('route' => 'page_schedule', 'class' => 'has-child-munu'));
+        $menu['Schedule']->addChild('2016 Schedule', array('route' => 'page_schedule'));
         $menu['Schedule']->addChild('View Sessions', array('route' => 'session_index'));
         $menu['Schedule']->addChild('Family Sessions', array('route' => 'page_family'));
         $menu['Schedule']->setAttributes([
@@ -51,7 +52,7 @@ class MenuBuilder
 
         $menu->addChild('Sponsors', array('route' => 'page_sponsors'));
 
-        $menu->addChild('Information', array('uri' => '#'));
+        $menu->addChild('Information', array('route' => 'page_about_us'));
         $menu['Information']->addChild('About Us', array('route' => 'page_about_us'));
         $menu['Information']->addChild('Code of Conduct', array('route' => 'page_code_of_conduct'));
         $menu['Information']->addChild('Venue', array('route' => 'page_venue'));
