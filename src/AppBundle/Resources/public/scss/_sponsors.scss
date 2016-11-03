@@ -38,18 +38,21 @@
     .sponsor-section {
         display: flex;
         justify-content: space-between;
-    }
-    .sponsor-section.gold .sponsor {
-        max-width: 45%;
-        vertical-align: top;
-        .logo {
-            height: 210px;
+        &.platinum .sponsor {
+            max-width: 48%;
         }
-    }
-    .sponsor-section.silver .sponsor {
-        max-width: 30%;
-        .logo {
-            height: 110px;
+        &.gold .sponsor {
+            max-width: 45%;
+            vertical-align: top;
+            .logo {
+                height: 210px;
+            }
+        }
+        &.silver .sponsor {
+            max-width: 30%;
+            .logo {
+                height: 110px;
+            }
         }
     }
 }
