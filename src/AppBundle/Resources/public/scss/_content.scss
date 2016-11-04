@@ -2,6 +2,11 @@
     font-size: 4em;
     margin-bottom: 1em;
     padding: .25em 0 .125em 0;
+    & + .subtitle {
+        margin-top: -2em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
 }
 
 .hero {
