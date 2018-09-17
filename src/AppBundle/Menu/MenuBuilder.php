@@ -42,7 +42,7 @@ class MenuBuilder
         $menu->addChild('Speakers', array('route' => 'speaker_index'));
 
         $menu->addChild('Schedule', array('route' => 'page_schedule', 'class' => 'has-child-munu'));
-        $menu['Schedule']->addChild('2016 Schedule', array('route' => 'page_schedule'));
+        $menu['Schedule']->addChild('2018 Schedule', array('route' => 'page_schedule'));
         $menu['Schedule']->addChild('View Sessions', array('route' => 'session_index'));
         $menu['Schedule']->addChild('Family Sessions', array('route' => 'page_family'));
         $menu['Schedule']->setAttributes([
