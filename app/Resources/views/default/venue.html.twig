@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ event_date_iso|date('Y') }} Venue | {{ parent() }}{% endblock %}
 {% block og_title %}{{ event_date_iso|date('Y') }} Venue{% endblock %}
-{% block meta_description %}The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast Technical Institute in Sioux Falls, SD.{% endblock %}
+{% block meta_description %}The next South Dakota Code Camp will be happening on {{ event_date }} at Raven Industries in Sioux Falls, SD.{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
     {{ parent() }}
@@ -9,24 +9,15 @@
 {% block javascripts %}
     <script src="//unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
     {{ parent() }}
-    <script>
-        var mymap = L.map('CampusMap').setView([43.569381,-96.7805735], 15);
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            maxZoom: 20,
-            id: '{{ mapbox_project_id }}',
-            accessToken: '{{ mapbox_access_token }}'
-        }).addTo(mymap);
-        var marker = L.marker([43.5693022,-96.7804116]).addTo(mymap);
-    </script>
 {% endblock %}
 {% block body %}
     <section class="page-content clearfix">
         <h1>{{ event_date_iso|date('Y') }} Venue</h1>
 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d92533.20362009699!2d-96.79487403839303!3d43.55107434038409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x878eb5a173b8afc3%3A0x5ff9c9f5741644aa!2sRaven+Industries+Inc%2C+East+6th+Street%2C+Sioux+Falls%2C+SD!3m2!1d43.5509713!2d-96.7248336!5e0!3m2!1sen!2sus!4v1537285653517" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
         <p>
-            The next South Dakota Code Camp will be happening on {{ event_date }} at Southeast
-            Technical Institute in the Sullivan Health Science Center. <a href="https://goo.gl/maps/anemCHNvdkv">Click here for directions.</a>
+            The next South Dakota Code Camp will be happening on {{ event_date }} at Raven Industries. <a href="https://goo.gl/maps/eC4dyQwmdyq" target="_blank">Click here for directions.</a>
         </p>
 
         <div id="CampusMap" style="height: 400px;"></div>

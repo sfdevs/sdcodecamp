@@ -36,8 +36,8 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     globals:
-        event_date: "November 5, 2016"
-        event_date_iso: "2016-11-05"
+        event_date: "October 27, 2018"
+        event_date_iso: "2018-10-27"
         bing_auth_id: "%bing_site_auth%"
 
 # Assetic Configuration
